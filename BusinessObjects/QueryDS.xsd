@@ -1,0 +1,1699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QueryDS" targetNamespace="http://tempuri.org/QueryDS.xsd" xmlns:mstns="http://tempuri.org/QueryDS.xsd" xmlns="http://tempuri.org/QueryDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ERSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BusinessObjects.Properties.Settings.GlobalReference.Default.ERSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormViewTableAdapter" GeneratorDataComponentClassName="FormViewTableAdapter" Name="FormView" UserDataComponentName="FormViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillData" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT *
+FROM FormView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="ApprovedDate" DataSetColumn="ApprovedDate" />
+              <Mapping SourceColumn="LastApprover" DataSetColumn="LastApprover" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+              <Mapping SourceColumn="ApproverIds" DataSetColumn="ApproverIds" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.FormView" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="GetDataByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT *
+FROM FormView
+where FormID=@FormID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="ERS_New.dbo.FormView" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormView" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormView" GetMethodModifier="Public" GetMethodName="GetPagedFormView" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormView" UserSourceName="GetPagedFormView">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormView</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormViewCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormViewCount" Modifier="Public" Name="QueryFormViewCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormViewCount">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormViewCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="4000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormMaterialViewTableAdapter" GeneratorDataComponentClassName="FormMaterialViewTableAdapter" Name="FormMaterialView" UserDataComponentName="FormMaterialViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.FormMaterialView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillData" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM FormMaterialView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="ShopID" DataSetColumn="ShopID" />
+              <Mapping SourceColumn="FirstVolume" DataSetColumn="FirstVolume" />
+              <Mapping SourceColumn="SecondVolume" DataSetColumn="SecondVolume" />
+              <Mapping SourceColumn="ThirdVolume" DataSetColumn="ThirdVolume" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="ShopName" DataSetColumn="ShopName" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Tel" DataSetColumn="Tel" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="CustomerNo" DataSetColumn="CustomerNo" />
+              <Mapping SourceColumn="CustomerOUID" DataSetColumn="CustomerOUID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormMaterialViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormMaterialViewByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormMaterialViewByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormMaterialViewByRight" UserSourceName="GetPagedFormMaterialViewByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormMaterialViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormMaterialViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormMaterialViewCountByRight" Modifier="Public" Name="QueryFormMaterialViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormMaterialViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormMaterialViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormContractViewTableAdapter" GeneratorDataComponentClassName="FormContractViewTableAdapter" Name="FormContractView" UserDataComponentName="FormContractViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.FormContractView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from FormContractView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="FormContractID" DataSetColumn="FormContractID" />
+              <Mapping SourceColumn="ContractTypeID" DataSetColumn="ContractTypeID" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="ContractName" DataSetColumn="ContractName" />
+              <Mapping SourceColumn="ContractAmount" DataSetColumn="ContractAmount" />
+              <Mapping SourceColumn="PageNumber" DataSetColumn="PageNumber" />
+              <Mapping SourceColumn="FirstCompany" DataSetColumn="FirstCompany" />
+              <Mapping SourceColumn="SecondCompany" DataSetColumn="SecondCompany" />
+              <Mapping SourceColumn="ThirdCompany" DataSetColumn="ThirdCompany" />
+              <Mapping SourceColumn="BeginDate" DataSetColumn="BeginDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PaymentType" DataSetColumn="PaymentType" />
+              <Mapping SourceColumn="MainContent" DataSetColumn="MainContent" />
+              <Mapping SourceColumn="ChangePart" DataSetColumn="ChangePart" />
+              <Mapping SourceColumn="ContractTypeName" DataSetColumn="ContractTypeName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormContractViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormContractViewByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormContractViewByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormContractViewByRight" UserSourceName="GetPagedFormContractViewByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormContractViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormContractViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormContractViewCountByRight" Modifier="Public" Name="QueryFormContractViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormContractViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormContractViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormApplyViewTableAdapter" GeneratorDataComponentClassName="FormApplyViewTableAdapter" Name="FormApplyView" UserDataComponentName="FormApplyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormApplyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillData" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM FormApplyView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Period" DataSetColumn="Period" />
+              <Mapping SourceColumn="BeginPeriod" DataSetColumn="BeginPeriod" />
+              <Mapping SourceColumn="EndPeriod" DataSetColumn="EndPeriod" />
+              <Mapping SourceColumn="ShopID" DataSetColumn="ShopID" />
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="PaymentTypeID" DataSetColumn="PaymentTypeID" />
+              <Mapping SourceColumn="ExpenseSubCategoryID" DataSetColumn="ExpenseSubCategoryID" />
+              <Mapping SourceColumn="IsClose" DataSetColumn="IsClose" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="PaymentTypeName" DataSetColumn="PaymentTypeName" />
+              <Mapping SourceColumn="ExpenseSubCategoryName" DataSetColumn="ExpenseSubCategoryName" />
+              <Mapping SourceColumn="IsComplete" DataSetColumn="IsComplete" />
+              <Mapping SourceColumn="AccruedPeriod" DataSetColumn="AccruedPeriod" />
+              <Mapping SourceColumn="ConfirmCompleteDate" DataSetColumn="ConfirmCompleteDate" />
+              <Mapping SourceColumn="ConfirmCompleteUserID" DataSetColumn="ConfirmCompleteUserID" />
+              <Mapping SourceColumn="AccruedAmount" DataSetColumn="AccruedAmount" />
+              <Mapping SourceColumn="FormApplyName" DataSetColumn="FormApplyName" />
+              <Mapping SourceColumn="IsAutoSplit" DataSetColumn="IsAutoSplit" />
+              <Mapping SourceColumn="PaymentAmount" DataSetColumn="PaymentAmount" />
+              <Mapping SourceColumn="PaidAmount" DataSetColumn="PaidAmount" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedData" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedData" GetMethodModifier="Public" GetMethodName="GetPagedData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedData" UserSourceName="GetPagedData">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedData</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tableName" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormApplyViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormApplyViewByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormApplyViewByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormApplyViewByRight" UserSourceName="GetPagedFormApplyViewByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormApplyViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryDataCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryDataCount" Modifier="Public" Name="QueryDataCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryDataCount">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryDataCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tableName" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormApplyViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormApplyViewCountByRight" Modifier="Public" Name="QueryFormApplyViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="QueryFormApplyViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormApplyViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormPersonalReimburseViewTableAdapter" GeneratorDataComponentClassName="FormPersonalReimburseViewTableAdapter" Name="FormPersonalReimburseView" UserDataComponentName="FormPersonalReimburseViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormPersonalReimburseView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from FormPersonalReimburseView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="Period" DataSetColumn="Period" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="TotalBudget" DataSetColumn="TotalBudget" />
+              <Mapping SourceColumn="ApprovedAmount" DataSetColumn="ApprovedAmount" />
+              <Mapping SourceColumn="ApprovingAmount" DataSetColumn="ApprovingAmount" />
+              <Mapping SourceColumn="RemainAmount" DataSetColumn="RemainAmount" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="RealAmount" DataSetColumn="RealAmount" />
+              <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormPersonalReimburseViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormPersonalReimburseByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormPersonalReimburseByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormPersonalReimburseByRight" UserSourceName="GetPagedFormPersonalReimburseByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormPersonalReimburseViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormPersonalReimburseViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormPersonalReimburseViewCountByRight" Modifier="Public" Name="QueryFormPersonalReimburseViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormPersonalReimburseViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormPersonalReimburseViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormBudgetAllocationViewTableAdapter" GeneratorDataComponentClassName="FormBudgetAllocationViewTableAdapter" Name="FormBudgetAllocationView" UserDataComponentName="FormBudgetAllocationViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.FormBudgetAllocationView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select  *  from FormBudgetAllocationView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="FormBudgetAllocationID" DataSetColumn="FormBudgetAllocationID" />
+              <Mapping SourceColumn="AttachFileName" DataSetColumn="AttachFileName" />
+              <Mapping SourceColumn="RealAttachFileName" DataSetColumn="RealAttachFileName" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormBugetAllocationViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormBugetAllocationViewByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormBugetAllocationViewByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormBugetAllocationViewByRight" UserSourceName="GetPagedFormBugetAllocationViewByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormBugetAllocationViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormBugetAllocationViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormBugetAllocationViewCountByRight" Modifier="Public" Name="QueryFormBugetAllocationViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormBugetAllocationViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormBugetAllocationViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormReimburseViewTableAdapter" GeneratorDataComponentClassName="FormReimburseViewTableAdapter" Name="FormReimburseView" UserDataComponentName="FormReimburseViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormReimburseView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT *
+FROM FormReimburseView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="PaymentTypeID" DataSetColumn="PaymentTypeID" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="PaymentTypeName" DataSetColumn="PaymentTypeName" />
+              <Mapping SourceColumn="FormApplyIds" DataSetColumn="FormApplyIds" />
+              <Mapping SourceColumn="FormApplyNos" DataSetColumn="FormApplyNos" />
+              <Mapping SourceColumn="DeliveryCompleteDate" DataSetColumn="DeliveryCompleteDate" />
+              <Mapping SourceColumn="DeliveryCompleteUserID" DataSetColumn="DeliveryCompleteUserID" />
+              <Mapping SourceColumn="IsDeliveryComplete" DataSetColumn="IsDeliveryComplete" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.GetPagedFormReimburseViewByRight" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormReimburseViewByRight" GetMethodModifier="Public" GetMethodName="GetPagedFormReimburseViewByRight" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormReimburseViewByRight" UserSourceName="GetPagedFormReimburseViewByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedFormReimburseViewByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="1000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS.dbo.QueryFormReimburseViewCountByRight" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryFormReimburseViewCountByRight" Modifier="Public" Name="QueryFormReimburseViewCountByRight" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryFormReimburseViewCountByRight">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryFormReimburseViewCountByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormBugetAllocationViewForExportByRightTableAdapter" GeneratorDataComponentClassName="FormBugetAllocationViewForExportByRightTableAdapter" Name="FormBugetAllocationViewForExportByRight" UserDataComponentName="FormBugetAllocationViewForExportByRightTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.GetFormBugetAllocationViewForExportByRight" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetFormBugetAllocationViewForExportByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormContractViewForExportByRightTableAdapter" GeneratorDataComponentClassName="FormContractViewForExportByRightTableAdapter" Name="FormContractViewForExportByRight" UserDataComponentName="FormContractViewForExportByRightTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.GetFormContractViewForExportByRight" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetFormContractViewForExportByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormMaterialViewForExportByRightTableAdapter" GeneratorDataComponentClassName="FormMaterialViewForExportByRightTableAdapter" Name="FormMaterialViewForExportByRight" UserDataComponentName="FormMaterialViewForExportByRightTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.GetFormMaterialViewForExportByRight" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetFormMaterialViewForExportByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormReimburseViewForExportByRightTableAdapter" GeneratorDataComponentClassName="FormReimburseViewForExportByRightTableAdapter" Name="FormReimburseViewForExportByRight" UserDataComponentName="FormReimburseViewForExportByRightTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.GetFormReimburseViewForExportByRight" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetFormReimburseViewForExportByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormPersonalReimburseViewForExportByRightTableAdapter" GeneratorDataComponentClassName="FormPersonalReimburseViewForExportByRightTableAdapter" Name="FormPersonalReimburseViewForExportByRight" UserDataComponentName="FormPersonalReimburseViewForExportByRightTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="ERS_New.dbo.GetFormPersonalReimburseViewForExportByRight" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetFormPersonalReimburseViewForExportByRight</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="2000" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PositionID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormTravelApplyViewTableAdapter" GeneratorDataComponentClassName="FormTravelApplyViewTableAdapter" Name="FormTravelApplyView" UserDataComponentName="FormTravelApplyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormTravelApplyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from FormTravelApplyView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="ApprovedDate" DataSetColumn="ApprovedDate" />
+              <Mapping SourceColumn="LastApprover" DataSetColumn="LastApprover" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+              <Mapping SourceColumn="ApproverIds" DataSetColumn="ApproverIds" />
+              <Mapping SourceColumn="TransportFee" DataSetColumn="TransportFee" />
+              <Mapping SourceColumn="HotelFee" DataSetColumn="HotelFee" />
+              <Mapping SourceColumn="MealFee" DataSetColumn="MealFee" />
+              <Mapping SourceColumn="OtherFee" DataSetColumn="OtherFee" />
+              <Mapping SourceColumn="TotalFee" DataSetColumn="TotalFee" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.FormTravelApplyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GeneratorSourceName="FillByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="FillByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from FormTravelApplyView where FormID=@ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="FormID" DataSourceName="Vitasoy_ERS.dbo.FormTravelApplyView" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.GetPagedData" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPagedFormTravelApplyView" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPagedFormTravelApplyView" GeneratorSourceName="FillPagedFormTravelApplyView" GetMethodModifier="Public" GetMethodName="GetPagedFormTravelApplyView" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPagedFormTravelApplyView" UserSourceName="FillPagedFormTravelApplyView">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetPagedData</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tableName" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@sortExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@startRowIndex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@maximumRows" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ERSConnectionString (Settings)" DbObjectName="Vitasoy_ERS.dbo.QueryDataCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="QueryDataCount" Modifier="Public" Name="QueryDataCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="QueryDataCount">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.QueryDataCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tableName" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@queryExpression" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QueryDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QueryDS" msprop:Generator_UserDSName="QueryDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FormView" msprop:Generator_TableClassName="FormViewDataTable" msprop:Generator_TableVarName="tableFormView" msprop:Generator_TablePropName="FormView" msprop:Generator_RowDeletingName="FormViewRowDeleting" msprop:Generator_UserTableName="FormView" msprop:Generator_RowChangingName="FormViewRowChanging" msprop:Generator_RowEvHandlerName="FormViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormViewRowDeleted" msprop:Generator_RowEvArgName="FormViewRowChangeEvent" msprop:Generator_RowChangedName="FormViewRowChanged" msprop:Generator_RowClassName="FormViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastApprover" msprop:Generator_ColumnVarNameInTable="columnLastApprover" msprop:Generator_ColumnPropNameInRow="LastApprover" msprop:Generator_ColumnPropNameInTable="LastApproverColumn" msprop:Generator_UserColumnName="LastApprover" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApproverIds" msprop:Generator_ColumnVarNameInTable="columnApproverIds" msprop:Generator_ColumnPropNameInRow="ApproverIds" msprop:Generator_ColumnPropNameInTable="ApproverIdsColumn" msprop:Generator_UserColumnName="ApproverIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormMaterialView" msprop:Generator_TableClassName="FormMaterialViewDataTable" msprop:Generator_TableVarName="tableFormMaterialView" msprop:Generator_TablePropName="FormMaterialView" msprop:Generator_RowDeletingName="FormMaterialViewRowDeleting" msprop:Generator_UserTableName="FormMaterialView" msprop:Generator_RowChangingName="FormMaterialViewRowChanging" msprop:Generator_RowEvHandlerName="FormMaterialViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormMaterialViewRowDeleted" msprop:Generator_RowEvArgName="FormMaterialViewRowChangeEvent" msprop:Generator_RowChangedName="FormMaterialViewRowChanged" msprop:Generator_RowClassName="FormMaterialViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShopID" msprop:Generator_ColumnVarNameInTable="columnShopID" msprop:Generator_ColumnPropNameInRow="ShopID" msprop:Generator_ColumnPropNameInTable="ShopIDColumn" msprop:Generator_UserColumnName="ShopID" type="xs:int" />
+              <xs:element name="FirstVolume" msprop:Generator_ColumnVarNameInTable="columnFirstVolume" msprop:Generator_ColumnPropNameInRow="FirstVolume" msprop:Generator_ColumnPropNameInTable="FirstVolumeColumn" msprop:Generator_UserColumnName="FirstVolume" type="xs:int" minOccurs="0" />
+              <xs:element name="SecondVolume" msprop:Generator_ColumnVarNameInTable="columnSecondVolume" msprop:Generator_ColumnPropNameInRow="SecondVolume" msprop:Generator_ColumnPropNameInTable="SecondVolumeColumn" msprop:Generator_UserColumnName="SecondVolume" type="xs:int" minOccurs="0" />
+              <xs:element name="ThirdVolume" msprop:Generator_ColumnVarNameInTable="columnThirdVolume" msprop:Generator_ColumnPropNameInRow="ThirdVolume" msprop:Generator_ColumnPropNameInTable="ThirdVolumeColumn" msprop:Generator_UserColumnName="ThirdVolume" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
+              <xs:element name="ShopName" msprop:Generator_ColumnVarNameInTable="columnShopName" msprop:Generator_ColumnPropNameInRow="ShopName" msprop:Generator_ColumnPropNameInTable="ShopNameColumn" msprop:Generator_UserColumnName="ShopName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tel" msprop:Generator_ColumnVarNameInTable="columnTel" msprop:Generator_ColumnPropNameInRow="Tel" msprop:Generator_ColumnPropNameInTable="TelColumn" msprop:Generator_UserColumnName="Tel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerNo" msprop:Generator_ColumnVarNameInTable="columnCustomerNo" msprop:Generator_ColumnPropNameInRow="CustomerNo" msprop:Generator_ColumnPropNameInTable="CustomerNoColumn" msprop:Generator_UserColumnName="CustomerNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerOUID" msprop:Generator_ColumnVarNameInTable="columnCustomerOUID" msprop:Generator_ColumnPropNameInRow="CustomerOUID" msprop:Generator_ColumnPropNameInTable="CustomerOUIDColumn" msprop:Generator_UserColumnName="CustomerOUID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormContractView" msprop:Generator_TableClassName="FormContractViewDataTable" msprop:Generator_TableVarName="tableFormContractView" msprop:Generator_TablePropName="FormContractView" msprop:Generator_RowDeletingName="FormContractViewRowDeleting" msprop:Generator_UserTableName="FormContractView" msprop:Generator_RowChangingName="FormContractViewRowChanging" msprop:Generator_RowEvHandlerName="FormContractViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormContractViewRowDeleted" msprop:Generator_RowEvArgName="FormContractViewRowChangeEvent" msprop:Generator_RowChangedName="FormContractViewRowChanged" msprop:Generator_RowClassName="FormContractViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormContractID" msprop:Generator_ColumnVarNameInTable="columnFormContractID" msprop:Generator_ColumnPropNameInRow="FormContractID" msprop:Generator_ColumnPropNameInTable="FormContractIDColumn" msprop:Generator_UserColumnName="FormContractID" type="xs:int" />
+              <xs:element name="ContractTypeID" msprop:Generator_ColumnVarNameInTable="columnContractTypeID" msprop:Generator_ColumnPropNameInRow="ContractTypeID" msprop:Generator_ColumnPropNameInTable="ContractTypeIDColumn" msprop:Generator_UserColumnName="ContractTypeID" type="xs:int" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractName" msprop:Generator_ColumnVarNameInTable="columnContractName" msprop:Generator_ColumnPropNameInRow="ContractName" msprop:Generator_ColumnPropNameInTable="ContractNameColumn" msprop:Generator_UserColumnName="ContractName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractAmount" msprop:Generator_ColumnVarNameInTable="columnContractAmount" msprop:Generator_ColumnPropNameInRow="ContractAmount" msprop:Generator_ColumnPropNameInTable="ContractAmountColumn" msprop:Generator_UserColumnName="ContractAmount" type="xs:decimal" />
+              <xs:element name="PageNumber" msprop:Generator_ColumnVarNameInTable="columnPageNumber" msprop:Generator_ColumnPropNameInRow="PageNumber" msprop:Generator_ColumnPropNameInTable="PageNumberColumn" msprop:Generator_UserColumnName="PageNumber" type="xs:int" />
+              <xs:element name="FirstCompany" msprop:Generator_ColumnVarNameInTable="columnFirstCompany" msprop:Generator_ColumnPropNameInRow="FirstCompany" msprop:Generator_ColumnPropNameInTable="FirstCompanyColumn" msprop:Generator_UserColumnName="FirstCompany">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SecondCompany" msprop:Generator_ColumnVarNameInTable="columnSecondCompany" msprop:Generator_ColumnPropNameInRow="SecondCompany" msprop:Generator_ColumnPropNameInTable="SecondCompanyColumn" msprop:Generator_UserColumnName="SecondCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ThirdCompany" msprop:Generator_ColumnVarNameInTable="columnThirdCompany" msprop:Generator_ColumnPropNameInRow="ThirdCompany" msprop:Generator_ColumnPropNameInTable="ThirdCompanyColumn" msprop:Generator_UserColumnName="ThirdCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BeginDate" msprop:Generator_ColumnVarNameInTable="columnBeginDate" msprop:Generator_ColumnPropNameInRow="BeginDate" msprop:Generator_ColumnPropNameInTable="BeginDateColumn" msprop:Generator_UserColumnName="BeginDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaymentType" msprop:Generator_ColumnVarNameInTable="columnPaymentType" msprop:Generator_ColumnPropNameInRow="PaymentType" msprop:Generator_ColumnPropNameInTable="PaymentTypeColumn" msprop:Generator_UserColumnName="PaymentType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainContent" msprop:Generator_ColumnVarNameInTable="columnMainContent" msprop:Generator_ColumnPropNameInRow="MainContent" msprop:Generator_ColumnPropNameInTable="MainContentColumn" msprop:Generator_UserColumnName="MainContent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChangePart" msprop:Generator_ColumnVarNameInTable="columnChangePart" msprop:Generator_ColumnPropNameInRow="ChangePart" msprop:Generator_ColumnPropNameInTable="ChangePartColumn" msprop:Generator_UserColumnName="ChangePart" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractTypeName" msprop:Generator_ColumnVarNameInTable="columnContractTypeName" msprop:Generator_ColumnPropNameInRow="ContractTypeName" msprop:Generator_ColumnPropNameInTable="ContractTypeNameColumn" msprop:Generator_UserColumnName="ContractTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormApplyView" msprop:Generator_TableClassName="FormApplyViewDataTable" msprop:Generator_TableVarName="tableFormApplyView" msprop:Generator_TablePropName="FormApplyView" msprop:Generator_RowDeletingName="FormApplyViewRowDeleting" msprop:Generator_UserTableName="FormApplyView" msprop:Generator_RowChangingName="FormApplyViewRowChanging" msprop:Generator_RowEvHandlerName="FormApplyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormApplyViewRowDeleted" msprop:Generator_RowEvArgName="FormApplyViewRowChangeEvent" msprop:Generator_RowChangedName="FormApplyViewRowChanged" msprop:Generator_RowClassName="FormApplyViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:dateTime" />
+              <xs:element name="BeginPeriod" msprop:Generator_ColumnVarNameInTable="columnBeginPeriod" msprop:Generator_ColumnPropNameInRow="BeginPeriod" msprop:Generator_ColumnPropNameInTable="BeginPeriodColumn" msprop:Generator_UserColumnName="BeginPeriod" type="xs:dateTime" />
+              <xs:element name="EndPeriod" msprop:Generator_ColumnVarNameInTable="columnEndPeriod" msprop:Generator_ColumnPropNameInRow="EndPeriod" msprop:Generator_ColumnPropNameInTable="EndPeriodColumn" msprop:Generator_UserColumnName="EndPeriod" type="xs:dateTime" />
+              <xs:element name="ShopID" msprop:Generator_ColumnVarNameInTable="columnShopID" msprop:Generator_ColumnPropNameInRow="ShopID" msprop:Generator_ColumnPropNameInTable="ShopIDColumn" msprop:Generator_UserColumnName="ShopID" type="xs:int" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
+              <xs:element name="PaymentTypeID" msprop:Generator_ColumnVarNameInTable="columnPaymentTypeID" msprop:Generator_ColumnPropNameInRow="PaymentTypeID" msprop:Generator_ColumnPropNameInTable="PaymentTypeIDColumn" msprop:Generator_UserColumnName="PaymentTypeID" type="xs:int" />
+              <xs:element name="ExpenseSubCategoryID" msprop:Generator_ColumnVarNameInTable="columnExpenseSubCategoryID" msprop:Generator_ColumnPropNameInRow="ExpenseSubCategoryID" msprop:Generator_ColumnPropNameInTable="ExpenseSubCategoryIDColumn" msprop:Generator_UserColumnName="ExpenseSubCategoryID" type="xs:int" />
+              <xs:element name="IsClose" msprop:Generator_ColumnVarNameInTable="columnIsClose" msprop:Generator_ColumnPropNameInRow="IsClose" msprop:Generator_ColumnPropNameInTable="IsCloseColumn" msprop:Generator_UserColumnName="IsClose" type="xs:boolean" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentTypeName" msprop:Generator_ColumnVarNameInTable="columnPaymentTypeName" msprop:Generator_ColumnPropNameInRow="PaymentTypeName" msprop:Generator_ColumnPropNameInTable="PaymentTypeNameColumn" msprop:Generator_UserColumnName="PaymentTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExpenseSubCategoryName" msprop:Generator_ColumnVarNameInTable="columnExpenseSubCategoryName" msprop:Generator_ColumnPropNameInRow="ExpenseSubCategoryName" msprop:Generator_ColumnPropNameInTable="ExpenseSubCategoryNameColumn" msprop:Generator_UserColumnName="ExpenseSubCategoryName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsComplete" msprop:Generator_ColumnVarNameInTable="columnIsComplete" msprop:Generator_ColumnPropNameInRow="IsComplete" msprop:Generator_ColumnPropNameInTable="IsCompleteColumn" msprop:Generator_UserColumnName="IsComplete" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AccruedPeriod" msprop:Generator_ColumnVarNameInTable="columnAccruedPeriod" msprop:Generator_ColumnPropNameInRow="AccruedPeriod" msprop:Generator_ColumnPropNameInTable="AccruedPeriodColumn" msprop:Generator_UserColumnName="AccruedPeriod" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ConfirmCompleteDate" msprop:Generator_ColumnVarNameInTable="columnConfirmCompleteDate" msprop:Generator_ColumnPropNameInRow="ConfirmCompleteDate" msprop:Generator_ColumnPropNameInTable="ConfirmCompleteDateColumn" msprop:Generator_UserColumnName="ConfirmCompleteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ConfirmCompleteUserID" msprop:Generator_ColumnVarNameInTable="columnConfirmCompleteUserID" msprop:Generator_ColumnPropNameInRow="ConfirmCompleteUserID" msprop:Generator_ColumnPropNameInTable="ConfirmCompleteUserIDColumn" msprop:Generator_UserColumnName="ConfirmCompleteUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="AccruedAmount" msprop:Generator_ColumnVarNameInTable="columnAccruedAmount" msprop:Generator_ColumnPropNameInRow="AccruedAmount" msprop:Generator_ColumnPropNameInTable="AccruedAmountColumn" msprop:Generator_UserColumnName="AccruedAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FormApplyName" msprop:Generator_ColumnVarNameInTable="columnFormApplyName" msprop:Generator_ColumnPropNameInRow="FormApplyName" msprop:Generator_ColumnPropNameInTable="FormApplyNameColumn" msprop:Generator_UserColumnName="FormApplyName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsAutoSplit" msprop:Generator_ColumnVarNameInTable="columnIsAutoSplit" msprop:Generator_ColumnPropNameInRow="IsAutoSplit" msprop:Generator_ColumnPropNameInTable="IsAutoSplitColumn" msprop:Generator_UserColumnName="IsAutoSplit" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PaymentAmount" msprop:Generator_ColumnVarNameInTable="columnPaymentAmount" msprop:Generator_ColumnPropNameInRow="PaymentAmount" msprop:Generator_ColumnPropNameInTable="PaymentAmountColumn" msprop:Generator_UserColumnName="PaymentAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaidAmount" msprop:Generator_ColumnVarNameInTable="columnPaidAmount" msprop:Generator_ColumnPropNameInRow="PaidAmount" msprop:Generator_ColumnPropNameInTable="PaidAmountColumn" msprop:Generator_UserColumnName="PaidAmount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormPersonalReimburseView" msprop:Generator_TableClassName="FormPersonalReimburseViewDataTable" msprop:Generator_TableVarName="tableFormPersonalReimburseView" msprop:Generator_TablePropName="FormPersonalReimburseView" msprop:Generator_RowDeletingName="FormPersonalReimburseViewRowDeleting" msprop:Generator_UserTableName="FormPersonalReimburseView" msprop:Generator_RowChangingName="FormPersonalReimburseViewRowChanging" msprop:Generator_RowEvHandlerName="FormPersonalReimburseViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormPersonalReimburseViewRowDeleted" msprop:Generator_RowEvArgName="FormPersonalReimburseViewRowChangeEvent" msprop:Generator_RowChangedName="FormPersonalReimburseViewRowChanged" msprop:Generator_RowClassName="FormPersonalReimburseViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:dateTime" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="TotalBudget" msprop:Generator_ColumnVarNameInTable="columnTotalBudget" msprop:Generator_ColumnPropNameInRow="TotalBudget" msprop:Generator_ColumnPropNameInTable="TotalBudgetColumn" msprop:Generator_UserColumnName="TotalBudget" type="xs:decimal" />
+              <xs:element name="ApprovedAmount" msprop:Generator_ColumnVarNameInTable="columnApprovedAmount" msprop:Generator_ColumnPropNameInRow="ApprovedAmount" msprop:Generator_ColumnPropNameInTable="ApprovedAmountColumn" msprop:Generator_UserColumnName="ApprovedAmount" type="xs:decimal" />
+              <xs:element name="ApprovingAmount" msprop:Generator_ColumnVarNameInTable="columnApprovingAmount" msprop:Generator_ColumnPropNameInRow="ApprovingAmount" msprop:Generator_ColumnPropNameInTable="ApprovingAmountColumn" msprop:Generator_UserColumnName="ApprovingAmount" type="xs:decimal" />
+              <xs:element name="RemainAmount" msprop:Generator_ColumnVarNameInTable="columnRemainAmount" msprop:Generator_ColumnPropNameInRow="RemainAmount" msprop:Generator_ColumnPropNameInTable="RemainAmountColumn" msprop:Generator_UserColumnName="RemainAmount" type="xs:decimal" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealAmount" msprop:Generator_ColumnVarNameInTable="columnRealAmount" msprop:Generator_ColumnPropNameInRow="RealAmount" msprop:Generator_ColumnPropNameInTable="RealAmountColumn" msprop:Generator_UserColumnName="RealAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DepartmentName" msprop:Generator_ColumnVarNameInTable="columnDepartmentName" msprop:Generator_ColumnPropNameInRow="DepartmentName" msprop:Generator_ColumnPropNameInTable="DepartmentNameColumn" msprop:Generator_UserColumnName="DepartmentName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormBudgetAllocationView" msprop:Generator_TableClassName="FormBudgetAllocationViewDataTable" msprop:Generator_TableVarName="tableFormBudgetAllocationView" msprop:Generator_TablePropName="FormBudgetAllocationView" msprop:Generator_RowDeletingName="FormBudgetAllocationViewRowDeleting" msprop:Generator_UserTableName="FormBudgetAllocationView" msprop:Generator_RowChangingName="FormBudgetAllocationViewRowChanging" msprop:Generator_RowEvHandlerName="FormBudgetAllocationViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormBudgetAllocationViewRowDeleted" msprop:Generator_RowEvArgName="FormBudgetAllocationViewRowChangeEvent" msprop:Generator_RowChangedName="FormBudgetAllocationViewRowChanged" msprop:Generator_RowClassName="FormBudgetAllocationViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormBudgetAllocationID" msprop:Generator_ColumnVarNameInTable="columnFormBudgetAllocationID" msprop:Generator_ColumnPropNameInRow="FormBudgetAllocationID" msprop:Generator_ColumnPropNameInTable="FormBudgetAllocationIDColumn" msprop:Generator_UserColumnName="FormBudgetAllocationID" type="xs:int" />
+              <xs:element name="AttachFileName" msprop:Generator_ColumnVarNameInTable="columnAttachFileName" msprop:Generator_ColumnPropNameInRow="AttachFileName" msprop:Generator_ColumnPropNameInTable="AttachFileNameColumn" msprop:Generator_UserColumnName="AttachFileName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealAttachFileName" msprop:Generator_ColumnVarNameInTable="columnRealAttachFileName" msprop:Generator_ColumnPropNameInRow="RealAttachFileName" msprop:Generator_ColumnPropNameInTable="RealAttachFileNameColumn" msprop:Generator_UserColumnName="RealAttachFileName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormReimburseView" msprop:Generator_TableClassName="FormReimburseViewDataTable" msprop:Generator_TableVarName="tableFormReimburseView" msprop:Generator_TablePropName="FormReimburseView" msprop:Generator_RowDeletingName="FormReimburseViewRowDeleting" msprop:Generator_UserTableName="FormReimburseView" msprop:Generator_RowChangingName="FormReimburseViewRowChanging" msprop:Generator_RowEvHandlerName="FormReimburseViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormReimburseViewRowDeleted" msprop:Generator_RowEvArgName="FormReimburseViewRowChangeEvent" msprop:Generator_RowChangedName="FormReimburseViewRowChanged" msprop:Generator_RowClassName="FormReimburseViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
+              <xs:element name="PaymentTypeID" msprop:Generator_ColumnVarNameInTable="columnPaymentTypeID" msprop:Generator_ColumnPropNameInRow="PaymentTypeID" msprop:Generator_ColumnPropNameInTable="PaymentTypeIDColumn" msprop:Generator_UserColumnName="PaymentTypeID" type="xs:int" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentTypeName" msprop:Generator_ColumnVarNameInTable="columnPaymentTypeName" msprop:Generator_ColumnPropNameInRow="PaymentTypeName" msprop:Generator_ColumnPropNameInTable="PaymentTypeNameColumn" msprop:Generator_UserColumnName="PaymentTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormApplyIds" msprop:Generator_ColumnVarNameInTable="columnFormApplyIds" msprop:Generator_ColumnPropNameInRow="FormApplyIds" msprop:Generator_ColumnPropNameInTable="FormApplyIdsColumn" msprop:Generator_UserColumnName="FormApplyIds">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormApplyNos" msprop:Generator_ColumnVarNameInTable="columnFormApplyNos" msprop:Generator_ColumnPropNameInRow="FormApplyNos" msprop:Generator_ColumnPropNameInTable="FormApplyNosColumn" msprop:Generator_UserColumnName="FormApplyNos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryCompleteDate" msprop:Generator_ColumnVarNameInTable="columnDeliveryCompleteDate" msprop:Generator_ColumnPropNameInRow="DeliveryCompleteDate" msprop:Generator_ColumnPropNameInTable="DeliveryCompleteDateColumn" msprop:Generator_UserColumnName="DeliveryCompleteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeliveryCompleteUserID" msprop:Generator_ColumnVarNameInTable="columnDeliveryCompleteUserID" msprop:Generator_ColumnPropNameInRow="DeliveryCompleteUserID" msprop:Generator_ColumnPropNameInTable="DeliveryCompleteUserIDColumn" msprop:Generator_UserColumnName="DeliveryCompleteUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="IsDeliveryComplete" msprop:Generator_ColumnVarNameInTable="columnIsDeliveryComplete" msprop:Generator_ColumnPropNameInRow="IsDeliveryComplete" msprop:Generator_ColumnPropNameInTable="IsDeliveryCompleteColumn" msprop:Generator_UserColumnName="IsDeliveryComplete" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormBugetAllocationViewForExportByRight" msprop:Generator_TableClassName="FormBugetAllocationViewForExportByRightDataTable" msprop:Generator_TableVarName="tableFormBugetAllocationViewForExportByRight" msprop:Generator_TablePropName="FormBugetAllocationViewForExportByRight" msprop:Generator_RowDeletingName="FormBugetAllocationViewForExportByRightRowDeleting" msprop:Generator_UserTableName="FormBugetAllocationViewForExportByRight" msprop:Generator_RowChangingName="FormBugetAllocationViewForExportByRightRowChanging" msprop:Generator_RowEvHandlerName="FormBugetAllocationViewForExportByRightRowChangeEventHandler" msprop:Generator_RowDeletedName="FormBugetAllocationViewForExportByRightRowDeleted" msprop:Generator_RowEvArgName="FormBugetAllocationViewForExportByRightRowChangeEvent" msprop:Generator_RowChangedName="FormBugetAllocationViewForExportByRightRowChanged" msprop:Generator_RowClassName="FormBugetAllocationViewForExportByRightRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormContractViewForExportByRight" msprop:Generator_TableClassName="FormContractViewForExportByRightDataTable" msprop:Generator_TableVarName="tableFormContractViewForExportByRight" msprop:Generator_TablePropName="FormContractViewForExportByRight" msprop:Generator_RowDeletingName="FormContractViewForExportByRightRowDeleting" msprop:Generator_UserTableName="FormContractViewForExportByRight" msprop:Generator_RowChangingName="FormContractViewForExportByRightRowChanging" msprop:Generator_RowEvHandlerName="FormContractViewForExportByRightRowChangeEventHandler" msprop:Generator_RowDeletedName="FormContractViewForExportByRightRowDeleted" msprop:Generator_RowEvArgName="FormContractViewForExportByRightRowChangeEvent" msprop:Generator_RowChangedName="FormContractViewForExportByRightRowChanged" msprop:Generator_RowClassName="FormContractViewForExportByRightRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormMaterialViewForExportByRight" msprop:Generator_TableClassName="FormMaterialViewForExportByRightDataTable" msprop:Generator_TableVarName="tableFormMaterialViewForExportByRight" msprop:Generator_TablePropName="FormMaterialViewForExportByRight" msprop:Generator_RowDeletingName="FormMaterialViewForExportByRightRowDeleting" msprop:Generator_UserTableName="FormMaterialViewForExportByRight" msprop:Generator_RowChangingName="FormMaterialViewForExportByRightRowChanging" msprop:Generator_RowEvHandlerName="FormMaterialViewForExportByRightRowChangeEventHandler" msprop:Generator_RowDeletedName="FormMaterialViewForExportByRightRowDeleted" msprop:Generator_RowEvArgName="FormMaterialViewForExportByRightRowChangeEvent" msprop:Generator_RowChangedName="FormMaterialViewForExportByRightRowChanged" msprop:Generator_RowClassName="FormMaterialViewForExportByRightRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormReimburseViewForExportByRight" msprop:Generator_TableClassName="FormReimburseViewForExportByRightDataTable" msprop:Generator_TableVarName="tableFormReimburseViewForExportByRight" msprop:Generator_TablePropName="FormReimburseViewForExportByRight" msprop:Generator_RowDeletingName="FormReimburseViewForExportByRightRowDeleting" msprop:Generator_UserTableName="FormReimburseViewForExportByRight" msprop:Generator_RowChangingName="FormReimburseViewForExportByRightRowChanging" msprop:Generator_RowEvHandlerName="FormReimburseViewForExportByRightRowChangeEventHandler" msprop:Generator_RowDeletedName="FormReimburseViewForExportByRightRowDeleted" msprop:Generator_RowEvArgName="FormReimburseViewForExportByRightRowChangeEvent" msprop:Generator_RowChangedName="FormReimburseViewForExportByRightRowChanged" msprop:Generator_RowClassName="FormReimburseViewForExportByRightRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormPersonalReimburseViewForExportByRight" msprop:Generator_TableClassName="FormPersonalReimburseViewForExportByRightDataTable" msprop:Generator_TableVarName="tableFormPersonalReimburseViewForExportByRight" msprop:Generator_TablePropName="FormPersonalReimburseViewForExportByRight" msprop:Generator_RowDeletingName="FormPersonalReimburseViewForExportByRightRowDeleting" msprop:Generator_UserTableName="FormPersonalReimburseViewForExportByRight" msprop:Generator_RowChangingName="FormPersonalReimburseViewForExportByRightRowChanging" msprop:Generator_RowEvHandlerName="FormPersonalReimburseViewForExportByRightRowChangeEventHandler" msprop:Generator_RowDeletedName="FormPersonalReimburseViewForExportByRightRowDeleted" msprop:Generator_RowEvArgName="FormPersonalReimburseViewForExportByRightRowChangeEvent" msprop:Generator_RowChangedName="FormPersonalReimburseViewForExportByRightRowChanged" msprop:Generator_RowClassName="FormPersonalReimburseViewForExportByRightRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormTravelApplyView" msprop:Generator_TableClassName="FormTravelApplyViewDataTable" msprop:Generator_TableVarName="tableFormTravelApplyView" msprop:Generator_TablePropName="FormTravelApplyView" msprop:Generator_RowDeletingName="FormTravelApplyViewRowDeleting" msprop:Generator_UserTableName="FormTravelApplyView" msprop:Generator_RowChangingName="FormTravelApplyViewRowChanging" msprop:Generator_RowEvHandlerName="FormTravelApplyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormTravelApplyViewRowDeleted" msprop:Generator_RowEvArgName="FormTravelApplyViewRowChangeEvent" msprop:Generator_RowChangedName="FormTravelApplyViewRowChanged" msprop:Generator_RowClassName="FormTravelApplyViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastApprover" msprop:Generator_ColumnVarNameInTable="columnLastApprover" msprop:Generator_ColumnPropNameInRow="LastApprover" msprop:Generator_ColumnPropNameInTable="LastApproverColumn" msprop:Generator_UserColumnName="LastApprover" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApproverIds" msprop:Generator_ColumnVarNameInTable="columnApproverIds" msprop:Generator_ColumnPropNameInRow="ApproverIds" msprop:Generator_ColumnPropNameInTable="ApproverIdsColumn" msprop:Generator_UserColumnName="ApproverIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportFee" msprop:Generator_ColumnVarNameInTable="columnTransportFee" msprop:Generator_ColumnPropNameInRow="TransportFee" msprop:Generator_ColumnPropNameInTable="TransportFeeColumn" msprop:Generator_UserColumnName="TransportFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HotelFee" msprop:Generator_ColumnVarNameInTable="columnHotelFee" msprop:Generator_ColumnPropNameInRow="HotelFee" msprop:Generator_ColumnPropNameInTable="HotelFeeColumn" msprop:Generator_UserColumnName="HotelFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MealFee" msprop:Generator_ColumnVarNameInTable="columnMealFee" msprop:Generator_ColumnPropNameInRow="MealFee" msprop:Generator_ColumnPropNameInTable="MealFeeColumn" msprop:Generator_UserColumnName="MealFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OtherFee" msprop:Generator_ColumnVarNameInTable="columnOtherFee" msprop:Generator_ColumnPropNameInRow="OtherFee" msprop:Generator_ColumnPropNameInTable="OtherFeeColumn" msprop:Generator_UserColumnName="OtherFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalFee" msprop:Generator_ColumnVarNameInTable="columnTotalFee" msprop:Generator_ColumnPropNameInRow="TotalFee" msprop:Generator_ColumnPropNameInTable="TotalFeeColumn" msprop:Generator_UserColumnName="TotalFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="FormMaterialView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormMaterialView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="FormApplyView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormApplyView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="FormPersonalReimburseView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormPersonalReimburseView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="FormReimburseView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormReimburseView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="FormTravelApplyView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormTravelApplyView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

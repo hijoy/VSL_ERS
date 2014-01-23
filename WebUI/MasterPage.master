@@ -1,0 +1,372 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" CodeBehind="MasterPage.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>维他奶协同办公系统</title>
+    <link href="~/css/newstyle.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/css/Extra.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/css/ControlCss.css" rel="stylesheet" type="text/css" runat="server" />
+    <style type="text/css">
+        .STYLE1
+        {
+            color: #000;
+        }
+        .STYLE6
+        {
+            color: #990000;
+        }
+        .STYLE7
+        {
+            color: #FF0000;
+        }
+        .ModelDlgBackGround
+        {
+            background-color: #CCCCCC;
+            filter: Alpha(Opacity=40);
+            z-index: 110;
+            left: 0px;
+            width: 100%;
+            position:fixed;
+            top: 0px;
+            height: 100%;
+        }
+        .ModelDlgArea
+        {
+            z-index: 111;
+            filter: Alpha(Opacity=100);
+            left: 0px;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            height: 100%;
+        }
+        .ModelDlgWindow
+        {
+            position:fixed;
+            z-index: 120;
+            width: 300px;
+            height: 300px;
+            margin-top: 150px;
+            margin-left: 40%;
+            background-color: #FFFFFF;
+            border-right-width: 3px;
+            border-bottom-width: 3px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-top-color: #666666;
+            border-right-color: #000099;
+            border-bottom-color: #000099;
+            border-left-color: #666666;
+            border-top-width: 1px;
+            border-left-width: 1px;
+        }
+        .ModelDlgTitle
+        {
+            color: #FFFFFF;
+            background-color: #003366;
+            margin: 3px;
+            padding: 3px;
+        }
+        .ModelDlgContent
+        {
+            width: 290px;
+            height: 220px;
+            margin: 3px;
+            padding: 5px;
+            overflow: auto;
+        }
+        .ModelDlgCmd
+        {
+            margin: 3px;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .style1
+        {
+            width: 575px;
+        }
+        .style2
+        {
+            width: 384px;
+        }
+        .style3
+        {
+            width: 296px;
+        }
+    </style>
+    <script type="text/javascript">
+        function noEnter() {
+            var event;
+            if (window.event) {
+                event = window.event;
+            }
+            if (event.srcElement) {
+                if (event.srcElement.nodeName != "TEXTAREA" && window.event.keyCode == 13) {
+                    window.event.returnValue = false;
+                }
+            }
+        }
+        function window_onfocus() {
+            document.onkeypress = noEnter;
+        }
+    </script>
+    <script type="text/javascript" for="window" event="onfocus">
+        return window_onfocus();
+    </script>
+</head>
+<body>
+    <form id="formMaster" runat="server">
+    <a name="top2"></a>
+    <asp:ScriptManager ID="ScriptManager1" AllowCustomErrorsRedirect="true" runat="server"
+        OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
+    </asp:ScriptManager>
+    <%--<cc2:AjaxFileUploadHelper ID="AjaxFileUploadHelper1" runat="server" />--%>
+    <!--lwy added, migrate from mainpage-->
+    <div style="width: 1280px; margin-left: auto; margin-right: auto;" id="divMenu" runat="server">
+        <div style="width: 1280px; background-color: #ffffff; color: #000; padding-top: 0px;
+            padding-bottom: 0px;">
+            <table>
+                <tr valign="bottom">
+                    <td>
+                        <img id="Img1" src="~/Images/logo2.png" runat="server" />
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td valign="bottom" class="style2">
+                        欢迎您：<asp:Label ID="StuffNameCtl" runat="server" CssClass="RedTextAlignCenter" />&nbsp;&nbsp;&nbsp;上次登录时间：<asp:Label
+                            ID="LastLogInTimeCtl" runat="server" CssClass="RedTextAlignCenter" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="style3">
+                        <asp:Label ID="PositionSelectLabel" Visible="false" CssClass="STYLE1" Text="当前职务:"
+                            runat="server" />
+                        <asp:DropDownList Visible="false" ID="PositionSelectCtl" runat="server" AutoPostBack="true"
+                            CssClass="InputCombo" Width="" OnSelectedIndexChanged="PositionSelectCtl_SelectedIndexChanged" />
+                        &nbsp; <span class="STYLE1">
+                            <asp:LinkButton ID="LogOutBtn" CssClass="white_link" runat="server" Text="注销" OnClick="LogOutBtn_Click"></asp:LinkButton>
+                            &nbsp;&nbsp;
+                            <asp:HyperLink ID="HelpID" runat="server" Text="帮助" CssClass="white_link" NavigateUrl="~/TemplateExcel/ERSHelp.rar"></asp:HyperLink>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="background-color: #FFFFFF;">
+                    <img src="~/Images/conner2.gif" width="17" height="30" runat="server" />
+                </td>
+                <td style="overflow: hidden; width: 100%; background-color: #FFFFFF; vertical-align: top;">
+                    <div style="width: 100%; overflow: hidden; text-align: left;">
+                        <div class="menu_bg ">
+                            <asp:Menu ID="NavigateMenu" runat="server" MaximumDynamicDisplayLevels="2" StaticPopOutImageTextFormatString=""
+                                SkipLinkText="" StaticSubMenuIndent="0px" EnableViewState="False" Orientation="Horizontal"
+                                Height="28px" DynamicHorizontalOffset="5" StaticPopOutImageUrl="~/Images/MenuSepImage.png">
+                                <StaticMenuItemStyle CssClass="ms-topnav" />
+                                <StaticHoverStyle CssClass="ms-topNavHover" />
+                                <DynamicHoverStyle CssClass="ms-topNavFlyOutsHover" />
+                                <DynamicMenuStyle CssClass="ms-topNavFlyOutsBorder" HorizontalPadding="0px" />
+                                <DynamicMenuItemStyle CssClass="ms-topNavFlyOuts" ItemSpacing="0px" />
+                                <Items>
+                                    <asp:MenuItem Text="首页" ToolTip="首页" Value="open" NavigateUrl="~/Home.aspx" SeparatorImageUrl="~/Images/MenuSepImage.png" />
+                                    <asp:MenuItem Text=" 申请与报销" Value="Folder" ToolTip="申请与报销" Selectable="false">
+                                        <asp:MenuItem Text="方案申请" ToolTip="方案申请" Value="方案申请" NavigateUrl="~/SalesForm/SalesApplySelect.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="等待我确认执行的申请单" ToolTip="等待我确认执行的申请单" Value="方案申请" NavigateUrl="~/SalesForm/FormApplyConfirmList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="方案报销" ToolTip="方案报销" Value="方案报销" NavigateUrl="~/SalesForm/FormApplySelectList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="合同申请" ToolTip="合同申请" Value="合同申请" NavigateUrl="~/OtherForm/ContractApply.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="广宣物资申请" ToolTip="广宣物资申请" Value="广宣物资申请" NavigateUrl="~/OtherForm/MaterialApply.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="个人费用报销申请" ToolTip="个人费用报销申请" Value="个人费用报销申请" NavigateUrl="~/OtherForm/PersonalReimburseApply.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="出差申请" ToolTip="出差申请" Value="出差申请" NavigateUrl="~/OtherForm/TravelApply.aspx" />
+                                        <asp:MenuItem Text="出差报销申请" ToolTip="出差报销申请" Value="出差报销申请" NavigateUrl="~/OtherForm/TravelReimburseSelect.aspx" />
+                                        <asp:MenuItem Text="预算调拨申请" ToolTip="预算调拨申请" Value="预算调拨申请" NavigateUrl="~/OtherForm/BudgetAllocationApply.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 预算管理" Value="Folder" Selectable="false" ToolTip="预算管理">
+                                        <asp:MenuItem Text="管理费用预算" ToolTip="管理费用预算" Value="管理费用预算" NavigateUrl="~/BudgetManage/ManageFeeBudget.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="销售费用预算" ToolTip="销售费用预算" Value="销售费用预算" NavigateUrl="~/BudgetManage/SalesFeeBudget.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="管理费用预算导入" ToolTip="管理费用预算导入" Value="管理费用预算导入" NavigateUrl="~/BudgetManage/ManageFeeBudgetImport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="销售费用预算导入" ToolTip="销售费用预算导入" Value="销售费用预算导入" NavigateUrl="~/BudgetManage/SalesFeeBudgetImport.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 单据查询" Value="Folder" Selectable="false" ToolTip="单据查询">
+                                        <asp:MenuItem Text="方案申请单查询" Value="open" ToolTip="方案申请单查询" NavigateUrl="~/QueryForm/FormApplyList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="方案报销单查询" Value="open" ToolTip="方案报销单查询" NavigateUrl="~/QueryForm/FormReimburseList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="广宣物资申请单查询" Value="open" ToolTip="广宣物资申请单查询" NavigateUrl="~/QueryForm/FormMaterialList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="合同查询" Value="open" ToolTip="合同查询" NavigateUrl="~/QueryForm/FormContractList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="个人报销费用查询" Value="open" ToolTip="个人报销费用查询" NavigateUrl="~/QueryForm/PersonalReimburseList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="预算调拨查询" Value="open" ToolTip="预算调拨查询" NavigateUrl="~/QueryForm/FormBugetAllocationList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="批量审批单据" Value="批量审批" ToolTip="批量审批单据" NavigateUrl="~/QueryForm/MyTaskList.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="方案书批量打印" Value="方案申请" ToolTip="批量打印单据" NavigateUrl="~/QueryForm/FormApplyBatchPrint.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 报表分析" Value="Folder" Selectable="false" ToolTip="报表分析">
+                                        <asp:MenuItem Text="总费用管控(财务专用)" ToolTip="总费用管控(财务专用)" Value="总费用管控(财务专用)" NavigateUrl="ReportManage/SalesTotalFeeForFinanceReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="总费用管控" ToolTip="总费用管控" Value="总费用管控" NavigateUrl="ReportManage/SalesTotalFeeReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="销售部核销率(财务专用)" ToolTip="销售部核销率(财务专用)" Value="销售部核销率(财务专用)" NavigateUrl="ReportManage/SalesReimburseRateForFinanceReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="销售部核销率" ToolTip="销售部核销率" Value="销售部核销率" NavigateUrl="ReportManage/SalesReimburseRateReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="销售部核销明细" ToolTip="销售部核销明细" Value="销售部核销明细" NavigateUrl="ReportManage/SalesReimburseDetailReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="发货明细报表" ToolTip="发货明细报表" Value="发货明细报表" NavigateUrl="ReportManage/SalesReimburseDeliveryReport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="费用统计报表" ToolTip="费用统计报表" Value="费用统计报表" NavigateUrl="ReportManage/SalesAccruedTotalFeeReport.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 基础数据" Value="Folder" Selectable="false" ToolTip="基础数据">
+                                        <asp:MenuItem Text="省份城市" ToolTip="省份城市" Value="省份城市" NavigateUrl="BaseData/ProvinceCity.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="客户" ToolTip="客户" Value="客户" NavigateUrl="BaseData/Customer.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="客户导入" ToolTip="客户导入" Value="客户导入" NavigateUrl="BaseData/CustomerImport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="门店" ToolTip="门店" Value="门店" NavigateUrl="BaseData/Shop.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="门店导入" ToolTip="门店导入" Value="门店导入" NavigateUrl="BaseData/ShopImport.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="产品" ToolTip="产品" Value="产品" NavigateUrl="BaseData/Product.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="渠道类型" ToolTip="渠道类型" Value="渠道类型" NavigateUrl="BaseData/ChannelType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="合同类型" ToolTip="合同类型" Value="合同类型" NavigateUrl="BaseData/ContractType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="客户类型" ToolTip="客户类型" Value="客户类型" NavigateUrl="BaseData/CustomerType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="产品类别" ToolTip="产品类别" Value="产品类别" NavigateUrl="BaseData/SKUCategory.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="门店级别" ToolTip="门店级别" Value="门店级别" NavigateUrl="BaseData/ShopLevel.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="陈列形式" ToolTip="陈列形式" Value="陈列形式" NavigateUrl="BaseData/ShelfType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="广宣物资" ToolTip="广宣物资" Value="广宣物资" NavigateUrl="BaseData/Material.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="促销类型" ToolTip="促销类型" Value="促销类型" NavigateUrl="BaseData/PromotionScope.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="促销形式" ToolTip="促销形式" Value="促销形式" NavigateUrl="BaseData/PromotionType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="审批拒绝原因" ToolTip="审批拒绝原因" Value="审批拒绝原因" NavigateUrl="BaseData/RejectReason.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="成本中心" ToolTip="成本中心" Value="成本中心" NavigateUrl="BaseData/CostCenter.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 财务操作" Value="Folder" Selectable="false" ToolTip="个人信息维护">
+                                        <asp:MenuItem Text="费用类别" ToolTip="费用类别" Value="费用大类" NavigateUrl="BaseData/ExpenseCategory.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="费用项" ToolTip="费用项" Value="费用项" NavigateUrl="BaseData/ExpenseItem.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="管理费用类别" ToolTip="管理费用类别" Value="管理费用类别" NavigateUrl="BaseData/ExpenseManageType.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="方案申请年份" ToolTip="方案申请年份" Value="方案申请年份" NavigateUrl="BaseData/ApplyYear.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="个人报销费用期间" ToolTip="个人报销费用期间" Value="个人报销费用期间" NavigateUrl="BaseData/ReimbursePeriod.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="预提费用期间" ToolTip="预提费用期间" Value="预提费用期间" NavigateUrl="BaseData/AccruedPeriod.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="支付类型" ToolTip="支付类型" Value="支付类型" NavigateUrl="BaseData/PaymentType.aspx">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text=" 系统管理" Value="Folder" Selectable="false" ToolTip="系统管理">
+                                        <asp:MenuItem Text="组织结构设定" ToolTip="组织结构设定" Value="组织结构设定" NavigateUrl="~/AuthorizationManage/OrganizationManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="用户设定" ToolTip="用户设定" Value="用户设定" NavigateUrl="~/AuthorizationManage/StuffUserManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="用户职务设定" ToolTip="用户职务设定" Value="用户设定" NavigateUrl="~/AuthorizationManage/PositionManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="系统角色管理" ToolTip="系统角色管理" Value="系统角色管理" NavigateUrl="~/AuthorizationManage/SystemRoleManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="职务权限设置" ToolTip="职务权限设置" Value="职务权限设置" NavigateUrl="~/AuthorizationManage/PositionRightManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="职务业务范围设置" ToolTip="职务业务范围设置" Value="职务业务范围设置" NavigateUrl="~/AuthorizationManage/OperateScopeManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="系统公告" ToolTip="系统公告" Value="系统公告" NavigateUrl="~/BaseData/Announcement.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="方案报销代理设置" ToolTip="方案报销代理设置" Value="方案报销代理设置" NavigateUrl="~/BaseData/ProxyReimburse.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="流程角色管理" ToolTip="流程角色管理" Value="流程角色管理" NavigateUrl="~/AuthorizationManage/PositionTypeManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="流程管理" ToolTip="流程管理" Value="流程管理" NavigateUrl="~/AuthorizationManage/FlowParticipantManage.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="邮件发送历史" ToolTip="邮件发送历史" Value="邮件发送历史" NavigateUrl="BaseData/EmailHistory.aspx">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem meta:resourcekey="代理填单设置" Value="代理填单设置" NavigateUrl="~/AuthorizationManage/ProxyBusiness.aspx" >
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--end-->
+    <div style="width: 1280px; margin-left: auto; margin-right: auto; background-color: #ffffff">
+        <table id="tbCurrentPage" runat="server" width="100%" border="0" align="center" cellpadding="0"
+            cellspacing="0">
+            <tr>
+                <td height="31" align="left" valign="middle" bgcolor="#FFFFFF" class="tdborder05"
+                    width="90%">
+                    &nbsp;
+                    <asp:Label ID="ContentTitleLabel" Style="font-size: 13px; color: #000;" runat="server"
+                        Text=""></asp:Label>
+                </td>
+                <td height="31" align="center" valign="middle" bgcolor="#FFFFFF" class="tdborder05"
+                    style="width: 10%">
+                    <asp:HyperLink ID="HomeLinkCtl" runat="server" NavigateUrl="~/Home.aspx" Text="首页"></asp:HyperLink>&nbsp&nbsp
+                </td>
+            </tr>
+        </table>
+        <div style="padding: 5px; min-height: 500px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div>
+        <asp:UpdatePanel ID="ModelDlgUpdatePanel" UpdateMode="Conditional" runat="server">
+            <ContentTemplate>
+                <div id="ModelDlg" style="display: none;" runat="server">
+                    <div class="ModelDlgBackGround">
+                    </div>
+                    <div id="divAlert" usercontrol_alertname="usercontrol_AlertName" runat="server" class="ModelDlgArea">
+                        <div class="ModelDlgWindow" style="height: 300px; width: 300px;">
+                            <div class="ModelDlgTitle">
+                                系统提示</div>
+                            <div class="ModelDlgContent">
+                                <asp:Literal Mode="PassThrough" ID="ModelDlgContentLiteral" runat="server"></asp:Literal>
+                            </div>
+                            <div class="ModelDlgCmd">
+                                <asp:Button ID="ModelDlgCloseBtn" Text="确定" runat="server" OnClick="ModelDlgCloseBtn_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    </form>
+</body>
+</html>

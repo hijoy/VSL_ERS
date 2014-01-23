@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Email" targetNamespace="http://tempuri.org/Email.xsd" xmlns:mstns="http://tempuri.org/Email.xsd" xmlns="http://tempuri.org/Email.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ERS_newConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERS_newConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.VitasoyOA.WindowsService.Properties.Settings.GlobalReference.Default.ERS_newConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormTableAdapter" GeneratorDataComponentClassName="FormTableAdapter" Name="Form" UserDataComponentName="FormTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.Form" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select InturnUserIds from form where statusid='1' group by InturnUserIds
+
+union
+
+select 'P'+convert(varchar(20),UserID)+'P' as InturnUserIds from dbo.FormApplyView  
+where IsClose = 0 and  
+StatusID = 2 And (IsComplete is not null and IsComplete=0) group by UserID
+ 
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InturnUserIds" DataSetColumn="InturnUserIds" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormViewTableAdapter" GeneratorDataComponentClassName="FormViewTableAdapter" Name="FormView" UserDataComponentName="FormViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.FormView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select  *
+from formview</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="RejectedFormID" DataSetColumn="RejectedFormID" />
+              <Mapping SourceColumn="ProcID" DataSetColumn="ProcID" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="OrganizationTreePath" DataSetColumn="OrganizationTreePath" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.FormView" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserID" GetMethodModifier="Public" GetMethodName="GetDataByUserID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserID" UserSourceName="GetDataByUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT FormID, FormNo, FormTypeID, FormTypeName, InTurnPositionIds, InTurnUserIds, LastModified, OrganizationTreePath, OrganizationUnitID, PageType, PositionID, PositionName, ProcID, ProxyPositionID, ProxyUserID, RejectedFormID, StatusID, StuffName, SubmitDate, UserID FROM FormView WHERE (CHARINDEX('P' + @StuffUserID + 'P', InTurnUserIds) &gt; 0) AND (StatusID = '1')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StuffUserID" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@StuffUserID" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StuffUserTableAdapter" GeneratorDataComponentClassName="StuffUserTableAdapter" Name="StuffUser" UserDataComponentName="StuffUserTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.StuffUser" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [StuffUser] WHERE (([StuffUserId] = @Original_StuffUserId) AND ([StuffName] = @Original_StuffName) AND ([StuffId] = @Original_StuffId) AND ([UserName] = @Original_UserName) AND ([UserPassword] = @Original_UserPassword) AND ([IsActive] = @Original_IsActive) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ([EMail] = @Original_EMail) AND ((@IsNull_LatestLogInTime = 1 AND [LatestLogInTime] IS NULL) OR ([LatestLogInTime] = @Original_LatestLogInTime)) AND ((@IsNull_LaterLogInTime = 1 AND [LaterLogInTime] IS NULL) OR ([LaterLogInTime] = @Original_LaterLogInTime)) AND ([LastSetPasswordTime] = @Original_LastSetPasswordTime) AND ((@IsNull_IsApprover = 1 AND [IsApprover] IS NULL) OR ([IsApprover] = @Original_IsApprover)) AND ((@IsNull_ApproveAmount = 1 AND [ApproveAmount] IS NULL) OR ([ApproveAmount] = @Original_ApproveAmount)) AND ((@IsNull_StuffNo = 1 AND [StuffNo] IS NULL) OR ([StuffNo] = @Original_StuffNo)) AND ((@IsNull_CostCenterID = 1 AND [CostCenterID] IS NULL) OR ([CostCenterID] = @Original_CostCenterID)) AND ((@IsNull_EnglishName = 1 AND [EnglishName] IS NULL) OR ([EnglishName] = @Original_EnglishName)) AND ((@IsNull_AttendDate = 1 AND [AttendDate] IS NULL) OR ([AttendDate] = @Original_AttendDate)) AND ((@IsNull_TrafficFeeLimit = 1 AND [TrafficFeeLimit] IS NULL) OR ([TrafficFeeLimit] = @Original_TrafficFeeLimit)) AND ((@IsNull_TelephoneFeeLimit = 1 AND [TelephoneFeeLimit] IS NULL) OR ([TelephoneFeeLimit] = @Original_TelephoneFeeLimit)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StuffUserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StuffUserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_StuffName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_StuffId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserPassword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserPassword" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsActive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Telephone" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Telephone" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMail" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LatestLogInTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LatestLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LaterLogInTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LaterLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LastSetPasswordTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LastSetPasswordTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IsApprover" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsApprover" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ApproveAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ApproveAmount" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_StuffNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_StuffNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EnglishName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EnglishName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AttendDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_AttendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TrafficFeeLimit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TrafficFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TelephoneFeeLimit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TelephoneFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [StuffUser] ([StuffName], [StuffId], [UserName], [UserPassword], [IsActive], [Telephone], [EMail], [LatestLogInTime], [LaterLogInTime], [LastSetPasswordTime], [IsApprover], [ApproveAmount], [StuffNo], [CostCenterID], [EnglishName], [AttendDate], [TrafficFeeLimit], [TelephoneFeeLimit]) VALUES (@StuffName, @StuffId, @UserName, @UserPassword, @IsActive, @Telephone, @EMail, @LatestLogInTime, @LaterLogInTime, @LastSetPasswordTime, @IsApprover, @ApproveAmount, @StuffNo, @CostCenterID, @EnglishName, @AttendDate, @TrafficFeeLimit, @TelephoneFeeLimit);
+SELECT StuffUserId, StuffName, StuffId, UserName, UserPassword, IsActive, Telephone, EMail, LatestLogInTime, LaterLogInTime, LastSetPasswordTime, IsApprover, ApproveAmount, StuffNo, CostCenterID, EnglishName, AttendDate, TrafficFeeLimit, TelephoneFeeLimit FROM StuffUser WHERE (StuffUserId = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@StuffName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@StuffId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserPassword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserPassword" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsActive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Telephone" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMail" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LatestLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LaterLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LastSetPasswordTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LastSetPasswordTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsApprover" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ApproveAmount" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@StuffNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EnglishName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@AttendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TrafficFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TelephoneFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from StuffUser</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [StuffUser] SET [StuffName] = @StuffName, [StuffId] = @StuffId, [UserName] = @UserName, [UserPassword] = @UserPassword, [IsActive] = @IsActive, [Telephone] = @Telephone, [EMail] = @EMail, [LatestLogInTime] = @LatestLogInTime, [LaterLogInTime] = @LaterLogInTime, [LastSetPasswordTime] = @LastSetPasswordTime, [IsApprover] = @IsApprover, [ApproveAmount] = @ApproveAmount, [StuffNo] = @StuffNo, [CostCenterID] = @CostCenterID, [EnglishName] = @EnglishName, [AttendDate] = @AttendDate, [TrafficFeeLimit] = @TrafficFeeLimit, [TelephoneFeeLimit] = @TelephoneFeeLimit WHERE (([StuffUserId] = @Original_StuffUserId) AND ([StuffName] = @Original_StuffName) AND ([StuffId] = @Original_StuffId) AND ([UserName] = @Original_UserName) AND ([UserPassword] = @Original_UserPassword) AND ([IsActive] = @Original_IsActive) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ([EMail] = @Original_EMail) AND ((@IsNull_LatestLogInTime = 1 AND [LatestLogInTime] IS NULL) OR ([LatestLogInTime] = @Original_LatestLogInTime)) AND ((@IsNull_LaterLogInTime = 1 AND [LaterLogInTime] IS NULL) OR ([LaterLogInTime] = @Original_LaterLogInTime)) AND ([LastSetPasswordTime] = @Original_LastSetPasswordTime) AND ((@IsNull_IsApprover = 1 AND [IsApprover] IS NULL) OR ([IsApprover] = @Original_IsApprover)) AND ((@IsNull_ApproveAmount = 1 AND [ApproveAmount] IS NULL) OR ([ApproveAmount] = @Original_ApproveAmount)) AND ((@IsNull_StuffNo = 1 AND [StuffNo] IS NULL) OR ([StuffNo] = @Original_StuffNo)) AND ((@IsNull_CostCenterID = 1 AND [CostCenterID] IS NULL) OR ([CostCenterID] = @Original_CostCenterID)) AND ((@IsNull_EnglishName = 1 AND [EnglishName] IS NULL) OR ([EnglishName] = @Original_EnglishName)) AND ((@IsNull_AttendDate = 1 AND [AttendDate] IS NULL) OR ([AttendDate] = @Original_AttendDate)) AND ((@IsNull_TrafficFeeLimit = 1 AND [TrafficFeeLimit] IS NULL) OR ([TrafficFeeLimit] = @Original_TrafficFeeLimit)) AND ((@IsNull_TelephoneFeeLimit = 1 AND [TelephoneFeeLimit] IS NULL) OR ([TelephoneFeeLimit] = @Original_TelephoneFeeLimit)));
+SELECT StuffUserId, StuffName, StuffId, UserName, UserPassword, IsActive, Telephone, EMail, LatestLogInTime, LaterLogInTime, LastSetPasswordTime, IsApprover, ApproveAmount, StuffNo, CostCenterID, EnglishName, AttendDate, TrafficFeeLimit, TelephoneFeeLimit FROM StuffUser WHERE (StuffUserId = @StuffUserId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@StuffName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@StuffId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserPassword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserPassword" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsActive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Telephone" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMail" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LatestLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LaterLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LastSetPasswordTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LastSetPasswordTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsApprover" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ApproveAmount" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@StuffNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EnglishName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@AttendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TrafficFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TelephoneFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StuffUserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StuffUserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_StuffName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_StuffId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="StuffId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserPassword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserPassword" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsActive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Telephone" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Telephone" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Telephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMail" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LatestLogInTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LatestLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LatestLogInTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LaterLogInTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LaterLogInTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LaterLogInTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_LastSetPasswordTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LastSetPasswordTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IsApprover" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsApprover" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsApprover" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ApproveAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ApproveAmount" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ApproveAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_StuffNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_StuffNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StuffNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CostCenterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CostCenterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EnglishName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EnglishName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EnglishName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AttendDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_AttendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttendDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TrafficFeeLimit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TrafficFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TrafficFeeLimit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TelephoneFeeLimit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TelephoneFeeLimit" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TelephoneFeeLimit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StuffUserId" ColumnName="StuffUserId" DataSourceName="ERS.dbo.StuffUser" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StuffUserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StuffUserId" DataSetColumn="StuffUserId" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+              <Mapping SourceColumn="StuffId" DataSetColumn="StuffId" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="UserPassword" DataSetColumn="UserPassword" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="Telephone" DataSetColumn="Telephone" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="LatestLogInTime" DataSetColumn="LatestLogInTime" />
+              <Mapping SourceColumn="LaterLogInTime" DataSetColumn="LaterLogInTime" />
+              <Mapping SourceColumn="LastSetPasswordTime" DataSetColumn="LastSetPasswordTime" />
+              <Mapping SourceColumn="IsApprover" DataSetColumn="IsApprover" />
+              <Mapping SourceColumn="ApproveAmount" DataSetColumn="ApproveAmount" />
+              <Mapping SourceColumn="StuffNo" DataSetColumn="StuffNo" />
+              <Mapping SourceColumn="CostCenterID" DataSetColumn="CostCenterID" />
+              <Mapping SourceColumn="EnglishName" DataSetColumn="EnglishName" />
+              <Mapping SourceColumn="AttendDate" DataSetColumn="AttendDate" />
+              <Mapping SourceColumn="TrafficFeeLimit" DataSetColumn="TrafficFeeLimit" />
+              <Mapping SourceColumn="TelephoneFeeLimit" DataSetColumn="TelephoneFeeLimit" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.StuffUser" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ApproveAmount, AttendDate, CostCenterID, EMail, EnglishName, IsActive, IsApprover, LastSetPasswordTime, LaterLogInTime, LatestLogInTime, StuffId, StuffName, StuffNo, StuffUserId, Telephone, TelephoneFeeLimit, TrafficFeeLimit, UserName, UserPassword FROM StuffUser WHERE (StuffUserId = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="StuffUserId" DataSourceName="ERS_New.dbo.StuffUser" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StuffUserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormApplyViewTableAdapter" GeneratorDataComponentClassName="FormApplyViewTableAdapter" Name="FormApplyView" UserDataComponentName="FormApplyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     dbo.Form.FormID, dbo.Form.FormNo, dbo.Form.UserID, dbo.Form.ProxyUserID, dbo.Form.ProxyPositionID, dbo.Form.OrganizationUnitID, dbo.Form.PositionID, dbo.Form.FormTypeID, dbo.Form.StatusID, dbo.Form.SubmitDate, dbo.Form.LastModified, 
+dbo.Form.InTurnUserIds, dbo.Form.InTurnPositionIds, dbo.Form.PageType, dbo.FormType.FormTypeName, dbo.Position.PositionName,  dbo.FormApply.IsClose, 
+ dbo.FormApply.IsComplete, dbo.StuffUser.StuffName, dbo.FormApply.ConfirmCompleteDate,dbo.FormApply.ConfirmCompleteUserID, 
+                      dbo.FormApply.FormApplyName,
+                      dbo.FormApply.PromotionBeginDate
+FROM         dbo.Form INNER JOIN
+                      dbo.FormType ON dbo.Form.FormTypeID = dbo.FormType.FormTypeID INNER JOIN
+                      dbo.Position ON dbo.Form.PositionID = dbo.Position.PositionId INNER JOIN
+                      dbo.StuffUser ON dbo.Form.UserID = dbo.StuffUser.StuffUserId INNER JOIN
+                      dbo.FormApply ON dbo.Form.FormID = dbo.FormApply.FormApplyID INNER JOIN
+                      dbo.Customer ON dbo.FormApply.CustomerID = dbo.Customer.CustomerID INNER JOIN
+                      dbo.PaymentType ON dbo.FormApply.PaymentTypeID = dbo.PaymentType.PaymentTypeID INNER JOIN
+                      dbo.ExpenseSubCategory ON dbo.FormApply.ExpenseSubCategoryID = dbo.ExpenseSubCategory.ExpenseSubCategoryID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="FormNo" DataSetColumn="FormNo" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="ProxyUserID" DataSetColumn="ProxyUserID" />
+              <Mapping SourceColumn="ProxyPositionID" DataSetColumn="ProxyPositionID" />
+              <Mapping SourceColumn="OrganizationUnitID" DataSetColumn="OrganizationUnitID" />
+              <Mapping SourceColumn="PositionID" DataSetColumn="PositionID" />
+              <Mapping SourceColumn="FormTypeID" DataSetColumn="FormTypeID" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="SubmitDate" DataSetColumn="SubmitDate" />
+              <Mapping SourceColumn="LastModified" DataSetColumn="LastModified" />
+              <Mapping SourceColumn="InTurnUserIds" DataSetColumn="InTurnUserIds" />
+              <Mapping SourceColumn="InTurnPositionIds" DataSetColumn="InTurnPositionIds" />
+              <Mapping SourceColumn="PageType" DataSetColumn="PageType" />
+              <Mapping SourceColumn="FormTypeName" DataSetColumn="FormTypeName" />
+              <Mapping SourceColumn="PositionName" DataSetColumn="PositionName" />
+              <Mapping SourceColumn="IsClose" DataSetColumn="IsClose" />
+              <Mapping SourceColumn="IsComplete" DataSetColumn="IsComplete" />
+              <Mapping SourceColumn="ConfirmCompleteDate" DataSetColumn="ConfirmCompleteDate" />
+              <Mapping SourceColumn="ConfirmCompleteUserID" DataSetColumn="ConfirmCompleteUserID" />
+              <Mapping SourceColumn="FormApplyName" DataSetColumn="FormApplyName" />
+              <Mapping SourceColumn="PromotionBeginDate" DataSetColumn="PromotionBeginDate" />
+              <Mapping SourceColumn="StuffName" DataSetColumn="StuffName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserID" GetMethodModifier="Public" GetMethodName="GetDataByUserID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserID" UserSourceName="GetDataByUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     dbo.Form.FormID, dbo.Form.FormNo, dbo.Form.UserID, dbo.Form.ProxyUserID, dbo.Form.ProxyPositionID, dbo.Form.OrganizationUnitID, dbo.Form.PositionID, dbo.Form.FormTypeID, dbo.Form.StatusID, dbo.Form.SubmitDate, dbo.Form.LastModified, 
+dbo.Form.InTurnUserIds, dbo.Form.InTurnPositionIds, dbo.Form.PageType, dbo.FormType.FormTypeName, dbo.Position.PositionName,  dbo.FormApply.IsClose, 
+ dbo.FormApply.IsComplete, dbo.FormApply.ConfirmCompleteDate,dbo.FormApply.ConfirmCompleteUserID, 
+dbo.FormApply.FormApplyName,dbo.FormApply.PromotionBeginDate,dbo.StuffUser.StuffName
+FROM         dbo.Form
+INNER JOIN
+dbo.FormType ON dbo.Form.FormTypeID = dbo.FormType.FormTypeID INNER JOIN
+dbo.Position ON dbo.Form.PositionID = dbo.Position.PositionId INNER JOIN
+dbo.StuffUser ON dbo.Form.UserID = dbo.StuffUser.StuffUserId INNER JOIN
+dbo.FormApply ON dbo.Form.FormID = dbo.FormApply.FormApplyID INNER JOIN
+dbo.Customer ON dbo.FormApply.CustomerID = dbo.Customer.CustomerID INNER JOIN 
+dbo.PaymentType ON dbo.FormApply.PaymentTypeID = dbo.PaymentType.PaymentTypeID
+INNER JOIN
+dbo.ExpenseSubCategory ON dbo.FormApply.ExpenseSubCategoryID = dbo.ExpenseSubCategory.ExpenseSubCategoryID
+
+WHERE (dbo.Form.UserID = @StuffUserID) AND (dbo.FormApply.IsClose = 0) AND (dbo.Form.StatusID = 2) AND (dbo.FormApply.IsComplete IS NOT NULL) AND (dbo.FormApply.IsComplete = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StuffUserID" ColumnName="UserID" DataSourceName="ERS.dbo.Form" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StuffUserID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmailHistoryTableAdapter" GeneratorDataComponentClassName="EmailHistoryTableAdapter" Name="EmailHistory" UserDataComponentName="EmailHistoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ERS_newConnectionString (Settings)" DbObjectName="ERS.dbo.EmailHistory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [EmailHistory] WHERE (([EmailHistoryID] = @Original_EmailHistoryID) AND ([SentTo] = @Original_SentTo) AND ((@IsNull_SendDate = 1 AND [SendDate] IS NULL) OR ([SendDate] = @Original_SendDate)) AND ((@IsNull_ResultType = 1 AND [ResultType] IS NULL) OR ([ResultType] = @Original_ResultType)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmailHistoryID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmailHistoryID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SentTo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SendDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [EmailHistory] ([SentTo], [EmailContent], [SendDate], [Result], [ResultType]) VALUES (@SentTo, @EmailContent, @SendDate, @Result, @ResultType);
+SELECT EmailHistoryID, SentTo, EmailContent, SendDate, Result, ResultType FROM EmailHistory WHERE (EmailHistoryID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SentTo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EmailContent" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="EmailContent" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM EmailHistory</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [EmailHistory] SET [SentTo] = @SentTo, [EmailContent] = @EmailContent, [SendDate] = @SendDate, [Result] = @Result, [ResultType] = @ResultType WHERE (([EmailHistoryID] = @Original_EmailHistoryID) AND ([SentTo] = @Original_SentTo) AND ((@IsNull_SendDate = 1 AND [SendDate] IS NULL) OR ([SendDate] = @Original_SendDate)) AND ((@IsNull_ResultType = 1 AND [ResultType] IS NULL) OR ([ResultType] = @Original_ResultType)));
+SELECT EmailHistoryID, SentTo, EmailContent, SendDate, Result, ResultType FROM EmailHistory WHERE (EmailHistoryID = @EmailHistoryID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SentTo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EmailContent" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="EmailContent" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmailHistoryID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmailHistoryID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SentTo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SendDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SendDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SendDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ResultType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmailHistoryID" ColumnName="EmailHistoryID" DataSourceName="ERS.dbo.EmailHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@EmailHistoryID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EmailHistoryID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmailHistoryID" DataSetColumn="EmailHistoryID" />
+              <Mapping SourceColumn="SentTo" DataSetColumn="SentTo" />
+              <Mapping SourceColumn="EmailContent" DataSetColumn="EmailContent" />
+              <Mapping SourceColumn="SendDate" DataSetColumn="SendDate" />
+              <Mapping SourceColumn="Result" DataSetColumn="Result" />
+              <Mapping SourceColumn="ResultType" DataSetColumn="ResultType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Email" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Email" msprop:Generator_UserDSName="Email">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Form" msprop:Generator_TableClassName="FormDataTable" msprop:Generator_TableVarName="tableForm" msprop:Generator_TablePropName="Form" msprop:Generator_RowDeletingName="FormRowDeleting" msprop:Generator_RowChangingName="FormRowChanging" msprop:Generator_RowEvHandlerName="FormRowChangeEventHandler" msprop:Generator_RowDeletedName="FormRowDeleted" msprop:Generator_UserTableName="Form" msprop:Generator_RowChangedName="FormRowChanged" msprop:Generator_RowEvArgName="FormRowChangeEvent" msprop:Generator_RowClassName="FormRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InturnUserIds" msprop:Generator_ColumnVarNameInTable="columnInturnUserIds" msprop:Generator_ColumnPropNameInRow="InturnUserIds" msprop:Generator_ColumnPropNameInTable="InturnUserIdsColumn" msprop:Generator_UserColumnName="InturnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormView" msprop:Generator_TableClassName="FormViewDataTable" msprop:Generator_TableVarName="tableFormView" msprop:Generator_TablePropName="FormView" msprop:Generator_RowDeletingName="FormViewRowDeleting" msprop:Generator_RowChangingName="FormViewRowChanging" msprop:Generator_RowEvHandlerName="FormViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormViewRowDeleted" msprop:Generator_UserTableName="FormView" msprop:Generator_RowChangedName="FormViewRowChanged" msprop:Generator_RowEvArgName="FormViewRowChangeEvent" msprop:Generator_RowClassName="FormViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RejectedFormID" msprop:Generator_ColumnVarNameInTable="columnRejectedFormID" msprop:Generator_ColumnPropNameInRow="RejectedFormID" msprop:Generator_ColumnPropNameInTable="RejectedFormIDColumn" msprop:Generator_UserColumnName="RejectedFormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcID" msprop:Generator_ColumnVarNameInTable="columnProcID" msprop:Generator_ColumnPropNameInRow="ProcID" msprop:Generator_ColumnPropNameInTable="ProcIDColumn" msprop:Generator_UserColumnName="ProcID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganizationTreePath" msprop:Generator_ColumnVarNameInTable="columnOrganizationTreePath" msprop:Generator_ColumnPropNameInRow="OrganizationTreePath" msprop:Generator_ColumnPropNameInTable="OrganizationTreePathColumn" msprop:Generator_UserColumnName="OrganizationTreePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StuffUser" msprop:Generator_TableClassName="StuffUserDataTable" msprop:Generator_TableVarName="tableStuffUser" msprop:Generator_TablePropName="StuffUser" msprop:Generator_RowDeletingName="StuffUserRowDeleting" msprop:Generator_RowChangingName="StuffUserRowChanging" msprop:Generator_RowEvHandlerName="StuffUserRowChangeEventHandler" msprop:Generator_RowDeletedName="StuffUserRowDeleted" msprop:Generator_UserTableName="StuffUser" msprop:Generator_RowChangedName="StuffUserRowChanged" msprop:Generator_RowEvArgName="StuffUserRowChangeEvent" msprop:Generator_RowClassName="StuffUserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StuffUserId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStuffUserId" msprop:Generator_ColumnPropNameInRow="StuffUserId" msprop:Generator_ColumnPropNameInTable="StuffUserIdColumn" msprop:Generator_UserColumnName="StuffUserId" type="xs:int" />
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StuffId" msprop:Generator_ColumnVarNameInTable="columnStuffId" msprop:Generator_ColumnPropNameInRow="StuffId" msprop:Generator_ColumnPropNameInTable="StuffIdColumn" msprop:Generator_UserColumnName="StuffId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserPassword" msprop:Generator_ColumnVarNameInTable="columnUserPassword" msprop:Generator_ColumnPropNameInRow="UserPassword" msprop:Generator_ColumnPropNameInTable="UserPasswordColumn" msprop:Generator_UserColumnName="UserPassword">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="Telephone" msprop:Generator_ColumnVarNameInTable="columnTelephone" msprop:Generator_ColumnPropNameInRow="Telephone" msprop:Generator_ColumnPropNameInTable="TelephoneColumn" msprop:Generator_UserColumnName="Telephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LatestLogInTime" msprop:Generator_ColumnVarNameInTable="columnLatestLogInTime" msprop:Generator_ColumnPropNameInRow="LatestLogInTime" msprop:Generator_ColumnPropNameInTable="LatestLogInTimeColumn" msprop:Generator_UserColumnName="LatestLogInTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LaterLogInTime" msprop:Generator_ColumnVarNameInTable="columnLaterLogInTime" msprop:Generator_ColumnPropNameInRow="LaterLogInTime" msprop:Generator_ColumnPropNameInTable="LaterLogInTimeColumn" msprop:Generator_UserColumnName="LaterLogInTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastSetPasswordTime" msprop:Generator_ColumnVarNameInTable="columnLastSetPasswordTime" msprop:Generator_ColumnPropNameInRow="LastSetPasswordTime" msprop:Generator_ColumnPropNameInTable="LastSetPasswordTimeColumn" msprop:Generator_UserColumnName="LastSetPasswordTime" type="xs:dateTime" />
+              <xs:element name="IsApprover" msprop:Generator_ColumnVarNameInTable="columnIsApprover" msprop:Generator_ColumnPropNameInRow="IsApprover" msprop:Generator_ColumnPropNameInTable="IsApproverColumn" msprop:Generator_UserColumnName="IsApprover" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ApproveAmount" msprop:Generator_ColumnVarNameInTable="columnApproveAmount" msprop:Generator_ColumnPropNameInRow="ApproveAmount" msprop:Generator_ColumnPropNameInTable="ApproveAmountColumn" msprop:Generator_UserColumnName="ApproveAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StuffNo" msprop:Generator_ColumnVarNameInTable="columnStuffNo" msprop:Generator_ColumnPropNameInRow="StuffNo" msprop:Generator_ColumnPropNameInTable="StuffNoColumn" msprop:Generator_UserColumnName="StuffNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CostCenterID" msprop:Generator_ColumnVarNameInTable="columnCostCenterID" msprop:Generator_ColumnPropNameInRow="CostCenterID" msprop:Generator_ColumnPropNameInTable="CostCenterIDColumn" msprop:Generator_UserColumnName="CostCenterID" type="xs:int" minOccurs="0" />
+              <xs:element name="EnglishName" msprop:Generator_ColumnVarNameInTable="columnEnglishName" msprop:Generator_ColumnPropNameInRow="EnglishName" msprop:Generator_ColumnPropNameInTable="EnglishNameColumn" msprop:Generator_UserColumnName="EnglishName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AttendDate" msprop:Generator_ColumnVarNameInTable="columnAttendDate" msprop:Generator_ColumnPropNameInRow="AttendDate" msprop:Generator_ColumnPropNameInTable="AttendDateColumn" msprop:Generator_UserColumnName="AttendDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TrafficFeeLimit" msprop:Generator_ColumnVarNameInTable="columnTrafficFeeLimit" msprop:Generator_ColumnPropNameInRow="TrafficFeeLimit" msprop:Generator_ColumnPropNameInTable="TrafficFeeLimitColumn" msprop:Generator_UserColumnName="TrafficFeeLimit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TelephoneFeeLimit" msprop:Generator_ColumnVarNameInTable="columnTelephoneFeeLimit" msprop:Generator_ColumnPropNameInRow="TelephoneFeeLimit" msprop:Generator_ColumnPropNameInTable="TelephoneFeeLimitColumn" msprop:Generator_UserColumnName="TelephoneFeeLimit" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FormApplyView" msprop:Generator_TableClassName="FormApplyViewDataTable" msprop:Generator_TableVarName="tableFormApplyView" msprop:Generator_TablePropName="FormApplyView" msprop:Generator_RowDeletingName="FormApplyViewRowDeleting" msprop:Generator_RowChangingName="FormApplyViewRowChanging" msprop:Generator_RowEvHandlerName="FormApplyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="FormApplyViewRowDeleted" msprop:Generator_UserTableName="FormApplyView" msprop:Generator_RowChangedName="FormApplyViewRowChanged" msprop:Generator_RowEvArgName="FormApplyViewRowChangeEvent" msprop:Generator_RowClassName="FormApplyViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="ProxyUserID" msprop:Generator_ColumnVarNameInTable="columnProxyUserID" msprop:Generator_ColumnPropNameInRow="ProxyUserID" msprop:Generator_ColumnPropNameInTable="ProxyUserIDColumn" msprop:Generator_UserColumnName="ProxyUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProxyPositionID" msprop:Generator_ColumnVarNameInTable="columnProxyPositionID" msprop:Generator_ColumnPropNameInRow="ProxyPositionID" msprop:Generator_ColumnPropNameInTable="ProxyPositionIDColumn" msprop:Generator_UserColumnName="ProxyPositionID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationUnitID" msprop:Generator_ColumnVarNameInTable="columnOrganizationUnitID" msprop:Generator_ColumnPropNameInRow="OrganizationUnitID" msprop:Generator_ColumnPropNameInTable="OrganizationUnitIDColumn" msprop:Generator_UserColumnName="OrganizationUnitID" type="xs:int" />
+              <xs:element name="PositionID" msprop:Generator_ColumnVarNameInTable="columnPositionID" msprop:Generator_ColumnPropNameInRow="PositionID" msprop:Generator_ColumnPropNameInTable="PositionIDColumn" msprop:Generator_UserColumnName="PositionID" type="xs:int" />
+              <xs:element name="FormTypeID" msprop:Generator_ColumnVarNameInTable="columnFormTypeID" msprop:Generator_ColumnPropNameInRow="FormTypeID" msprop:Generator_ColumnPropNameInTable="FormTypeIDColumn" msprop:Generator_UserColumnName="FormTypeID" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="SubmitDate" msprop:Generator_ColumnVarNameInTable="columnSubmitDate" msprop:Generator_ColumnPropNameInRow="SubmitDate" msprop:Generator_ColumnPropNameInTable="SubmitDateColumn" msprop:Generator_UserColumnName="SubmitDate" type="xs:dateTime" />
+              <xs:element name="LastModified" msprop:Generator_ColumnVarNameInTable="columnLastModified" msprop:Generator_ColumnPropNameInRow="LastModified" msprop:Generator_ColumnPropNameInTable="LastModifiedColumn" msprop:Generator_UserColumnName="LastModified" type="xs:dateTime" />
+              <xs:element name="InTurnUserIds" msprop:Generator_ColumnVarNameInTable="columnInTurnUserIds" msprop:Generator_ColumnPropNameInRow="InTurnUserIds" msprop:Generator_ColumnPropNameInTable="InTurnUserIdsColumn" msprop:Generator_UserColumnName="InTurnUserIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTurnPositionIds" msprop:Generator_ColumnVarNameInTable="columnInTurnPositionIds" msprop:Generator_ColumnPropNameInRow="InTurnPositionIds" msprop:Generator_ColumnPropNameInTable="InTurnPositionIdsColumn" msprop:Generator_UserColumnName="InTurnPositionIds" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PageType" msprop:Generator_ColumnVarNameInTable="columnPageType" msprop:Generator_ColumnPropNameInRow="PageType" msprop:Generator_ColumnPropNameInTable="PageTypeColumn" msprop:Generator_UserColumnName="PageType" type="xs:int" />
+              <xs:element name="FormTypeName" msprop:Generator_ColumnVarNameInTable="columnFormTypeName" msprop:Generator_ColumnPropNameInRow="FormTypeName" msprop:Generator_ColumnPropNameInTable="FormTypeNameColumn" msprop:Generator_UserColumnName="FormTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PositionName" msprop:Generator_ColumnVarNameInTable="columnPositionName" msprop:Generator_ColumnPropNameInRow="PositionName" msprop:Generator_ColumnPropNameInTable="PositionNameColumn" msprop:Generator_UserColumnName="PositionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsClose" msprop:Generator_ColumnVarNameInTable="columnIsClose" msprop:Generator_ColumnPropNameInRow="IsClose" msprop:Generator_ColumnPropNameInTable="IsCloseColumn" msprop:Generator_UserColumnName="IsClose" type="xs:boolean" />
+              <xs:element name="IsComplete" msprop:Generator_ColumnVarNameInTable="columnIsComplete" msprop:Generator_ColumnPropNameInRow="IsComplete" msprop:Generator_ColumnPropNameInTable="IsCompleteColumn" msprop:Generator_UserColumnName="IsComplete" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ConfirmCompleteDate" msprop:Generator_ColumnVarNameInTable="columnConfirmCompleteDate" msprop:Generator_ColumnPropNameInRow="ConfirmCompleteDate" msprop:Generator_ColumnPropNameInTable="ConfirmCompleteDateColumn" msprop:Generator_UserColumnName="ConfirmCompleteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ConfirmCompleteUserID" msprop:Generator_ColumnVarNameInTable="columnConfirmCompleteUserID" msprop:Generator_ColumnPropNameInRow="ConfirmCompleteUserID" msprop:Generator_ColumnPropNameInTable="ConfirmCompleteUserIDColumn" msprop:Generator_UserColumnName="ConfirmCompleteUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="FormApplyName" msprop:Generator_ColumnVarNameInTable="columnFormApplyName" msprop:Generator_ColumnPropNameInRow="FormApplyName" msprop:Generator_ColumnPropNameInTable="FormApplyNameColumn" msprop:Generator_UserColumnName="FormApplyName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PromotionBeginDate" msprop:Generator_ColumnVarNameInTable="columnPromotionBeginDate" msprop:Generator_ColumnPropNameInRow="PromotionBeginDate" msprop:Generator_ColumnPropNameInTable="PromotionBeginDateColumn" msprop:Generator_UserColumnName="PromotionBeginDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StuffName" msprop:Generator_ColumnVarNameInTable="columnStuffName" msprop:Generator_ColumnPropNameInRow="StuffName" msprop:Generator_ColumnPropNameInTable="StuffNameColumn" msprop:Generator_UserColumnName="StuffName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EmailHistory" msprop:Generator_TableClassName="EmailHistoryDataTable" msprop:Generator_TableVarName="tableEmailHistory" msprop:Generator_RowChangedName="EmailHistoryRowChanged" msprop:Generator_TablePropName="EmailHistory" msprop:Generator_RowDeletingName="EmailHistoryRowDeleting" msprop:Generator_RowChangingName="EmailHistoryRowChanging" msprop:Generator_RowEvHandlerName="EmailHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="EmailHistoryRowDeleted" msprop:Generator_RowClassName="EmailHistoryRow" msprop:Generator_UserTableName="EmailHistory" msprop:Generator_RowEvArgName="EmailHistoryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmailHistoryID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmailHistoryID" msprop:Generator_ColumnPropNameInRow="EmailHistoryID" msprop:Generator_ColumnPropNameInTable="EmailHistoryIDColumn" msprop:Generator_UserColumnName="EmailHistoryID" type="xs:int" />
+              <xs:element name="SentTo" msprop:Generator_ColumnVarNameInTable="columnSentTo" msprop:Generator_ColumnPropNameInRow="SentTo" msprop:Generator_ColumnPropNameInTable="SentToColumn" msprop:Generator_UserColumnName="SentTo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailContent" msprop:Generator_ColumnVarNameInTable="columnEmailContent" msprop:Generator_ColumnPropNameInRow="EmailContent" msprop:Generator_ColumnPropNameInTable="EmailContentColumn" msprop:Generator_UserColumnName="EmailContent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SendDate" msprop:Generator_ColumnVarNameInTable="columnSendDate" msprop:Generator_ColumnPropNameInRow="SendDate" msprop:Generator_ColumnPropNameInTable="SendDateColumn" msprop:Generator_UserColumnName="SendDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResultType" msprop:Generator_ColumnVarNameInTable="columnResultType" msprop:Generator_ColumnPropNameInRow="ResultType" msprop:Generator_ColumnPropNameInTable="ResultTypeColumn" msprop:Generator_UserColumnName="ResultType" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="StuffUser_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StuffUser" />
+      <xs:field xpath="mstns:StuffUserId" />
+    </xs:unique>
+    <xs:unique name="FormApplyView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FormApplyView" />
+      <xs:field xpath="mstns:FormID" />
+    </xs:unique>
+    <xs:unique name="EmailHistory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EmailHistory" />
+      <xs:field xpath="mstns:EmailHistoryID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

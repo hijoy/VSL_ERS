@@ -1,0 +1,4 @@
+DBRefFolders found in your dbp file
+Connect String: Data Source=GRAPE-WANG;Initial Catalog=HDER;Integrated Security=True
+Provider: Microsoft SQL Server
+

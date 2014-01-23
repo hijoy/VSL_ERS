@@ -1,0 +1,49 @@
+﻿.StaticMenuItem, .StaticMenuItemHover
+{
+    font-size: 14px;
+    text-decoration: none;
+    padding: 2px 5px 2px 5px;
+    height: 25px;
+    width: 50px;
+    border-width: 0px 1px 0px 1px;
+    border-color: #D7D7D7 #D7D7D7 #FFFFFF #FFFFFF;
+    border-style: solid;
+}
+
+.StaticMenuItem, .StaticMenuItemSelected
+{
+    font-size: 14px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.StaticMenuItemHover
+{
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.DynamicMenu
+{
+    /*background-color : #F2F3F4;*/
+    border: solid 1px #D7D7D7;
+}
+
+.DynamicMenuItem, .DynamicMenuItemHover
+{
+    background-image: url(../Images/search_bg.gif);
+    background-repeat: repeat-x;
+    padding: 2px 5px 2px 5px;
+    height: 25px;
+    z-index: 1;
+}
+
+.DynamicMenuItem
+{
+    /*border-top:solid 1px  #EBF5FF;*/
+    color: #FFFFFF;
+}
+
+.DynamicMenuItemHover
+{
+}

@@ -1,0 +1,1571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F24F90C1-7E02-4E8C-80E1-F0032EF91CDA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebUI</RootNamespace>
+    <AssemblyName>WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30512.20315, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ajaxtool\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthorizationManage\FlowParticipantManage.aspx" />
+    <Content Include="AuthorizationManage\OperateScopeManage.aspx" />
+    <Content Include="AuthorizationManage\OrganizationManage.aspx" />
+    <Content Include="AuthorizationManage\PositionManage.aspx" />
+    <Content Include="AuthorizationManage\PositionRightManage.aspx" />
+    <Content Include="AuthorizationManage\PositionTypeManage.aspx" />
+    <Content Include="AuthorizationManage\ProxyBusiness.aspx" />
+    <Content Include="AuthorizationManage\StuffUserManage.aspx" />
+    <Content Include="AuthorizationManage\SystemRoleManage.aspx" />
+    <Content Include="BaseData\AccruedPeriod.aspx" />
+    <Content Include="BaseData\Announcement.aspx" />
+    <Content Include="BaseData\ApplyYear.aspx" />
+    <Content Include="BaseData\BulletinDetail.aspx" />
+    <Content Include="BaseData\ChannelType.aspx" />
+    <Content Include="BaseData\ContractType.aspx" />
+    <Content Include="BaseData\CostCenter.aspx" />
+    <Content Include="BaseData\Customer.aspx" />
+    <Content Include="BaseData\CustomerType.aspx" />
+    <Content Include="BaseData\EmailHistory.aspx" />
+    <Content Include="BaseData\ExpenseCategory.aspx" />
+    <Content Include="BaseData\ExpenseItem.aspx" />
+    <Content Include="BaseData\ExpenseManageType.aspx" />
+    <Content Include="BaseData\CustomerImport.aspx" />
+    <Content Include="BaseData\Material.aspx" />
+    <Content Include="BaseData\PaymentType.aspx" />
+    <Content Include="BaseData\Product.aspx" />
+    <Content Include="BaseData\PromotionScope.aspx" />
+    <Content Include="BaseData\PromotionType.aspx" />
+    <Content Include="BaseData\ProvinceCity.aspx" />
+    <Content Include="BaseData\ProxyReimburse.aspx" />
+    <Content Include="BaseData\ReimbursePeriod.aspx" />
+    <Content Include="BaseData\RejectReason.aspx" />
+    <Content Include="BaseData\ShelfType.aspx" />
+    <Content Include="BaseData\Shop.aspx" />
+    <Content Include="BaseData\ShopLevel.aspx" />
+    <Content Include="BaseData\SKUCategory.aspx" />
+    <Content Include="BaseData\ShopImport.aspx" />
+    <Content Include="BudgetManage\ManageFeeBudget.aspx" />
+    <Content Include="BudgetManage\ManageFeeBudgetImport.aspx" />
+    <Content Include="BudgetManage\SalesFeeBudget.aspx" />
+    <Content Include="BudgetManage\SalesFeeBudgetImport.aspx" />
+    <Content Include="Bulletin.aspx" />
+    <Content Include="BulletinDetail.aspx" />
+    <Content Include="BusinessProxySelect.aspx" />
+    <Content Include="Css\ControlCss.css" />
+    <Content Include="Css\Extra.css" />
+    <Content Include="Css\newstyle.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DefaultErrorPage.aspx" />
+    <Content Include="Dialog\BudgetSalesFeeViewSearch.aspx" />
+    <Content Include="Dialog\CustomerSearch.aspx" />
+    <Content Include="Dialog\download.aspx" />
+    <Content Include="Dialog\MaterialSearch.aspx" />
+    <Content Include="Dialog\OrganizationUnitSelectDlg.aspx" />
+    <Content Include="Dialog\ShopSearch.aspx" />
+    <Content Include="Dialog\SKUSearch.aspx" />
+    <Content Include="Dialog\StaffSearch.aspx" />
+    <Content Include="ErrorPage\DatabaseErrorPage.aspx" />
+    <Content Include="ErrorPage\LostSessionErrorPage.aspx" />
+    <Content Include="ErrorPage\NoPositionErrorPage.aspx" />
+    <Content Include="ErrorPage\NoRightErrorPage.aspx" />
+    <Content Include="ErrorPage\SystemErrorPage.aspx" />
+    <Content Include="ERS_Report\ERS_Report.sln" />
+    <Content Include="ERS_Report\ERS_Report\ERS_Report.rptproj.user" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="images.new\bottom.jpg" />
+    <Content Include="images.new\button.png" />
+    <Content Include="images.new\button1.png" />
+    <Content Include="images.new\button2.png" />
+    <Content Include="images.new\h2_bg.jpg" />
+    <Content Include="images.new\main.jpg" />
+    <Content Include="images.new\menu_bg.jpg" />
+    <Content Include="images.new\menu_bg_hov.jpg" />
+    <Content Include="images.new\tab_bg.jpg" />
+    <Content Include="images.new\tb2_bg.jpg" />
+    <Content Include="images.new\title.jpg" />
+    <Content Include="Images\1.gif" />
+    <Content Include="Images\10.gif" />
+    <Content Include="Images\11.gif" />
+    <Content Include="Images\12.gif" />
+    <Content Include="Images\13.gif" />
+    <Content Include="Images\14.gif" />
+    <Content Include="Images\15.gif" />
+    <Content Include="Images\16.gif" />
+    <Content Include="Images\17.gif" />
+    <Content Include="Images\18.gif" />
+    <Content Include="Images\19.gif" />
+    <Content Include="Images\2.gif" />
+    <Content Include="Images\27.gif" />
+    <Content Include="Images\27.jpg" />
+    <Content Include="Images\28.gif" />
+    <Content Include="Images\29.gif" />
+    <Content Include="Images\3.gif" />
+    <Content Include="Images\30.gif" />
+    <Content Include="Images\31.gif" />
+    <Content Include="Images\33.gif" />
+    <Content Include="Images\34.gif" />
+    <Content Include="Images\35.gif" />
+    <Content Include="Images\36.gif" />
+    <Content Include="Images\37.gif" />
+    <Content Include="Images\38.gif" />
+    <Content Include="Images\39.gif" />
+    <Content Include="Images\4.gif" />
+    <Content Include="Images\40.gif" />
+    <Content Include="Images\42.gif" />
+    <Content Include="Images\5.gif" />
+    <Content Include="Images\52.gif" />
+    <Content Include="Images\52.png" />
+    <Content Include="Images\5654.gif" />
+    <Content Include="Images\6.gif" />
+    <Content Include="Images\7.gif" />
+    <Content Include="Images\8.gif" />
+    <Content Include="Images\9.gif" />
+    <Content Include="Images\approve.png" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\arrow2.gif" />
+    <Content Include="Images\ArrowHead.gif" />
+    <Content Include="Images\ArrowHead1.png" />
+    <Content Include="Images\av_s01.jpg" />
+    <Content Include="Images\av_s02.jpg" />
+    <Content Include="Images\av_s03.jpg" />
+    <Content Include="Images\av_s04.jpg" />
+    <Content Include="Images\av_s05.jpg" />
+    <Content Include="Images\av_s06.jpg" />
+    <Content Include="Images\banner_bg.jpg" />
+    <Content Include="Images\bannner.gif" />
+    <Content Include="Images\bannner.jpg" />
+    <Content Include="Images\bannner2.gif" />
+    <Content Include="Images\bannner2.jpg" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\big1.gif" />
+    <Content Include="Images\big2.gif" />
+    <Content Include="Images\big3.gif" />
+    <Content Include="Images\big4.gif" />
+    <Content Include="Images\big5.gif" />
+    <Content Include="Images\big6.gif" />
+    <Content Include="Images\border\box_bottom_rev.jpg" />
+    <Content Include="Images\border\box_mid_rev.jpg" />
+    <Content Include="Images\border\box_top_rev.jpg" />
+    <Content Include="Images\border\left_branket_bottom.gif" />
+    <Content Include="Images\border\left_branket_mid.gif" />
+    <Content Include="Images\border\left_branket_top.gif" />
+    <Content Include="Images\border\light_window_bottom.gif" />
+    <Content Include="Images\border\light_window_top.gif" />
+    <Content Include="Images\border\querybox_bottom.gif" />
+    <Content Include="Images\border\step_bottom.gif" />
+    <Content Include="Images\border\step_mid.gif" />
+    <Content Include="Images\border\step_top_1.gif" />
+    <Content Include="Images\border\step_top_2.gif" />
+    <Content Include="Images\border\step_top_3.gif" />
+    <Content Include="Images\border\up_arrow_box_top.gif" />
+    <Content Include="Images\botton-5.gif" />
+    <Content Include="Images\botton1.gif" />
+    <Content Include="Images\btnCancel.gif" />
+    <Content Include="Images\btnDelete.gif" />
+    <Content Include="Images\btnSave.gif" />
+    <Content Include="Images\btnSubmit.gif" />
+    <Content Include="Images\btn_normal.gif" />
+    <Content Include="Images\btn_normal.jpg" />
+    <Content Include="Images\BudgetInfo.png" />
+    <Content Include="Images\button1-1.jpg" />
+    <Content Include="Images\button1.jpg" />
+    <Content Include="Images\button2.jpg" />
+    <Content Include="Images\button3.jpg" />
+    <Content Include="Images\b_login.gif" />
+    <Content Include="Images\cal.gif" />
+    <Content Include="Images\cal2.gif" />
+    <Content Include="Images\calendar.gif" />
+    <Content Include="Images\Calendar.png" />
+    <Content Include="Images\chanpin1.gif" />
+    <Content Include="Images\chanpin2.gif" />
+    <Content Include="Images\chanpinjieshaoleft.gif" />
+    <Content Include="Images\chanpinjieshaoright.gif" />
+    <Content Include="Images\chanpinjieshaotitle.gif" />
+    <Content Include="Images\chaoyusuan.gif" />
+    <Content Include="Images\chaoyusuan.jpg" />
+    <Content Include="Images\conner.gif" />
+    <Content Include="Images\conner.jpg" />
+    <Content Include="Images\conner1.gif" />
+    <Content Include="Images\conner2.gif" />
+    <Content Include="Images\copyright.gif" />
+    <Content Include="Images\DeleteBN.JPG" />
+    <Content Include="Images\denglu.gif" />
+    <Content Include="Images\department.png" />
+    <Content Include="Images\DeptBudget.png" />
+    <Content Include="Images\dot1.gif" />
+    <Content Include="Images\dot2.gif" />
+    <Content Include="Images\dot28.gif" />
+    <Content Include="Images\dot3.gif" />
+    <Content Include="Images\dot3.jpg" />
+    <Content Include="Images\dot4.gif" />
+    <Content Include="Images\DownArrow.gif" />
+    <Content Include="Images\gears_an.gif" />
+    <Content Include="Images\HorizonLine.gif" />
+    <Content Include="Images\icon1.gif" />
+    <Content Include="Images\icon2.gif" />
+    <Content Include="Images\icon3.gif" />
+    <Content Include="Images\icon4.gif" />
+    <Content Include="Images\icon5.gif" />
+    <Content Include="Images\icon6.gif" />
+    <Content Include="Images\imagegif.gif" />
+    <Content Include="Images\inflash1.swf" />
+    <Content Include="Images\left.gif" />
+    <Content Include="Images\LeftArrow.gif" />
+    <Content Include="Images\LeftDownArrow.gif" />
+    <Content Include="Images\line.gif" />
+    <Content Include="Images\line.jpg" />
+    <Content Include="Images\liuchengtu.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\lock.JPG" />
+    <Content Include="Images\LogIn\av_s01.jpg" />
+    <Content Include="Images\LogIn\av_s02.jpg" />
+    <Content Include="Images\LogIn\av_s03.jpg" />
+    <Content Include="Images\LogIn\av_s04.jpg" />
+    <Content Include="Images\LogIn\av_s05.jpg" />
+    <Content Include="Images\LogIn\av_s06.jpg" />
+    <Content Include="Images\LogIn\big1.gif" />
+    <Content Include="Images\LogIn\big2.gif" />
+    <Content Include="Images\LogIn\big3.gif" />
+    <Content Include="Images\LogIn\big4.gif" />
+    <Content Include="Images\LogIn\big5.gif" />
+    <Content Include="Images\LogIn\big6.gif" />
+    <Content Include="Images\LogIn\button1.jpg" />
+    <Content Include="Images\LogIn\button2.jpg" />
+    <Content Include="Images\LogIn\button3.jpg" />
+    <Content Include="Images\LogIn\b_login.gif" />
+    <Content Include="Images\LogIn\chanpin1.gif" />
+    <Content Include="Images\LogIn\chanpin2.gif" />
+    <Content Include="Images\LogIn\chanpinjieshaoleft.gif" />
+    <Content Include="Images\LogIn\chanpinjieshaoright.gif" />
+    <Content Include="Images\LogIn\chanpinjieshaotitle.gif" />
+    <Content Include="Images\LogIn\chaoyusuan.gif" />
+    <Content Include="Images\LogIn\chaoyusuan.jpg" />
+    <Content Include="Images\LogIn\copyright.gif" />
+    <Content Include="Images\LogIn\denglu.gif" />
+    <Content Include="Images\LogIn\form.css" />
+    <Content Include="Images\LogIn\icon1.gif" />
+    <Content Include="Images\LogIn\icon2.gif" />
+    <Content Include="Images\LogIn\icon3.gif" />
+    <Content Include="Images\LogIn\icon4.gif" />
+    <Content Include="Images\LogIn\icon5.gif" />
+    <Content Include="Images\LogIn\icon6.gif" />
+    <Content Include="Images\LogIn\imagegif.gif" />
+    <Content Include="Images\LogIn\inflash1.swf" />
+    <Content Include="Images\LogIn\left.gif" />
+    <Content Include="Images\LogIn\line.gif" />
+    <Content Include="Images\LogIn\liuchengtu.jpg" />
+    <Content Include="Images\LogIn\login_bot.jpg" />
+    <Content Include="Images\LogIn\login_di.jpg" />
+    <Content Include="Images\LogIn\login_top.gif" />
+    <Content Include="Images\LogIn\login_top2.jpg" />
+    <Content Include="Images\LogIn\logo.gif" />
+    <Content Include="Images\LogIn\logobg.gif" />
+    <Content Include="Images\LogIn\mima.gif" />
+    <Content Include="Images\LogIn\newsbg.gif" />
+    <Content Include="Images\LogIn\newstitle.gif" />
+    <Content Include="Images\LogIn\rightmenu.gif" />
+    <Content Include="Images\LogIn\title_bg.jpg" />
+    <Content Include="Images\LogIn\title_bg2.jpg" />
+    <Content Include="Images\LogIn\title_bg3.jpg" />
+    <Content Include="Images\LogIn\top.gif" />
+    <Content Include="Images\LogIn\yonghuming.gif" />
+    <Content Include="Images\LogIn\zhuce.gif" />
+    <Content Include="Images\login_bot.jpg" />
+    <Content Include="Images\login_di.jpg" />
+    <Content Include="Images\login_top.gif" />
+    <Content Include="Images\login_top1.gif" />
+    <Content Include="Images\login_top2.gif" />
+    <Content Include="Images\login_top3.gif" />
+    <Content Include="Images\login_top5.gif" />
+    <Content Include="Images\login_top6.gif" />
+    <Content Include="Images\login_top7.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo2.gif" />
+    <Content Include="Images\logo2.jpg" />
+    <Content Include="Images\logo2.png" />
+    <Content Include="Images\logobg.gif" />
+    <Content Include="Images\MenuSepImage.gif" />
+    <Content Include="Images\MenuSepImage.PNG" />
+    <Content Include="Images\menu_bg.jpg" />
+    <Content Include="Images\menu_bg2.jpg" />
+    <Content Include="Images\mima.gif" />
+    <Content Include="Images\newsbg.gif" />
+    <Content Include="Images\newstitle.gif" />
+    <Content Include="Images\organization.JPG" />
+    <Content Include="Images\organize.GIF" />
+    <Content Include="Images\OverBudget.gif" />
+    <Content Include="Images\OverCredit.gif" />
+    <Content Include="Images\pic1.png" />
+    <Content Include="Images\pic2.png" />
+    <Content Include="Images\pic4.gif" />
+    <Content Include="Images\position.JPG" />
+    <Content Include="Images\post.png" />
+    <Content Include="Images\reject.png" />
+    <Content Include="Images\RightArrow.gif" />
+    <Content Include="Images\RightDownArrow.gif" />
+    <Content Include="Images\rightmenu.gif" />
+    <Content Include="Images\role1.gif" />
+    <Content Include="Images\role2.gif" />
+    <Content Include="Images\search_bg.gif" />
+    <Content Include="Images\search_bg.jpg" />
+    <Content Include="Images\search_bg1.gif" />
+    <Content Include="Images\search_bg1.jpg" />
+    <Content Include="Images\search_bg2.gif" />
+    <Content Include="Images\search_bg3.gif" />
+    <Content Include="Images\search_bg4.gif" />
+    <Content Include="Images\search_bg5.gif" />
+    <Content Include="Images\search_bg6.gif" />
+    <Content Include="Images\sysLeftMenu.gif" />
+    <Content Include="Images\title.jpg" />
+    <Content Include="Images\title1.png" />
+    <Content Include="Images\title2.png" />
+    <Content Include="Images\title3.jpg" />
+    <Content Include="Images\title3.png" />
+    <Content Include="Images\title_bg.gif" />
+    <Content Include="Images\title_bg.jpg" />
+    <Content Include="Images\title_bg2.jpg" />
+    <Content Include="Images\title_bg3.jpg" />
+    <Content Include="Images\top.gif" />
+    <Content Include="Images\TopBanner.GIF" />
+    <Content Include="Images\TopBanner.jpg" />
+    <Content Include="Images\VerticalLine.gif" />
+    <Content Include="Images\yonghuming.gif" />
+    <Content Include="Images\zhuce.gif" />
+    <Content Include="Images\未命名.JPG" />
+    <Content Include="KeepSession.aspx" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="OtherForm\BudgetAllocationApply.aspx" />
+    <Content Include="OtherForm\BudgetAllocationApproval.aspx" />
+    <Content Include="OtherForm\ContractApply.aspx" />
+    <Content Include="OtherForm\ContractApproval.aspx" />
+    <Content Include="OtherForm\MaterialApply.aspx" />
+    <Content Include="OtherForm\MaterialApproval.aspx" />
+    <Content Include="OtherForm\PersonalReimburseApply.aspx" />
+    <Content Include="OtherForm\PersonalReimburseApproval.aspx" />
+    <Content Include="OtherForm\TravelApply.aspx" />
+    <Content Include="OtherForm\TravelApproval.aspx" />
+    <Content Include="OtherForm\TravelReimburseSelect.aspx" />
+    <Content Include="OtherForm\TravelReimburseApply.aspx" />
+    <Content Include="OtherForm\TravelReimburseApproval.aspx" />
+    <Content Include="PositionSelect.aspx" />
+    <Content Include="QueryForm\FormApplyList.aspx" />
+    <Content Include="QueryForm\FormBugetAllocationList.aspx" />
+    <Content Include="QueryForm\FormContractList.aspx" />
+    <Content Include="QueryForm\FormMaterialList.aspx" />
+    <Content Include="QueryForm\FormReimburseList.aspx" />
+    <Content Include="QueryForm\MyTaskList.aspx" />
+    <Content Include="QueryForm\MyTaskListSharePoint.aspx" />
+    <Content Include="QueryForm\PersonalReimburseList.aspx" />
+    <Content Include="QueryForm\FormApplyBatchPrint.aspx" />
+    <Content Include="ReportManage\SalesAccruedTotalFeeReport.aspx" />
+    <Content Include="ReportManage\SalesApplyExportReport.aspx" />
+    <Content Include="ReportManage\SalesBudgetByPosition.aspx" />
+    <Content Include="ReportManage\SalesPromotionPrintReport.aspx" />
+    <Content Include="ReportManage\SalesReimburseDeliveryReport.aspx" />
+    <Content Include="ReportManage\SalesReimburseDetailReport.aspx" />
+    <Content Include="ReportManage\SalesReimburseRateForFinanceReport.aspx" />
+    <Content Include="ReportManage\SalesReimburseRateReport.aspx" />
+    <Content Include="ReportManage\SalesTotalFeeForFinanceReport.aspx" />
+    <Content Include="ReportManage\SalesTotalFeeReport.aspx" />
+    <Content Include="ReportManage\SalesApplyListBatch.aspx" />
+    <Content Include="SalesForm\FormApplyConfirmList.aspx" />
+    <Content Include="SalesForm\FormApplySelectList.aspx" />
+    <Content Include="SalesForm\ReimburseGoodsApply.aspx" />
+    <Content Include="SalesForm\ReimburseGoodsApproval.aspx" />
+    <Content Include="SalesForm\ReimburseMoneyApply.aspx" />
+    <Content Include="SalesForm\ReimburseMoneyApproval.aspx" />
+    <Content Include="SalesForm\SalesApplySelect.aspx" />
+    <Content Include="SalesForm\SalesGeneralApply.aspx" />
+    <Content Include="SalesForm\SalesGeneralApproval.aspx" />
+    <Content Include="SalesForm\SalesGeneralExecution.aspx" />
+    <Content Include="SalesForm\SalesPromotionApply.aspx" />
+    <Content Include="SalesForm\SalesPromotionApproval.aspx" />
+    <Content Include="SalesForm\SalesPromotionExecution.aspx" />
+    <Content Include="SalesForm\SalesRebateApply.aspx" />
+    <Content Include="SalesForm\SalesRebateApproval.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Script\Copy of DateInput.js" />
+    <Content Include="Script\DateInput.js" />
+    <Content Include="Script\js.js" />
+    <Content Include="SysLog\AuthorizationConfigureLog.aspx" />
+    <Content Include="SysLog\CommonDataEditActionLog.aspx" />
+    <Content Include="SysLog\LogInActionLog.aspx" />
+    <Content Include="UserControls\APFlowNodes.ascx" />
+    <Content Include="UserControls\AttachmentFile.ascx" />
+    <Content Include="UserControls\BudgetSalesFeeViewControl.ascx" />
+    <Content Include="UserControls\CustomerControl.ascx" />
+    <Content Include="UserControls\MaterialControl.ascx" />
+    <Content Include="UserControls\MultiAttachmentFile.ascx" />
+    <Content Include="UserControls\OUSelect.ascx" />
+    <Content Include="UserControls\PromotionPrintControl.ascx" />
+    <Content Include="UserControls\ReportViewer.ascx" />
+    <Content Include="UserControls\ReportViewerWithoutPara.ascx" />
+    <Content Include="UserControls\ReportViewerWithParameter.ascx" />
+    <Content Include="UserControls\ShopSelectControl.ascx" />
+    <Content Include="UserControls\SKUControl.ascx" />
+    <Content Include="UserControls\StaffControl.ascx" />
+    <Content Include="UserControls\UCDateInput.ascx" />
+    <Content Include="UserControls\UCDateTimeInput.ascx" />
+    <Content Include="UserControls\ucUpdateProgress.ascx" />
+    <Content Include="UserControls\YearAndMonthUserControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationManage\FlowParticipantManage.aspx.designer.cs">
+      <DependentUpon>FlowParticipantManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\OperateScopeManage.aspx.designer.cs">
+      <DependentUpon>OperateScopeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\OrganizationManage.aspx.designer.cs">
+      <DependentUpon>OrganizationManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionManage.aspx.designer.cs">
+      <DependentUpon>PositionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionRightManage.aspx.designer.cs">
+      <DependentUpon>PositionRightManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionTypeManage.aspx.designer.cs">
+      <DependentUpon>PositionTypeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\ProxyBusiness.aspx.cs">
+      <DependentUpon>ProxyBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\ProxyBusiness.aspx.designer.cs">
+      <DependentUpon>ProxyBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\StuffUserManage.aspx.designer.cs">
+      <DependentUpon>StuffUserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\SystemRoleManage.aspx.designer.cs">
+      <DependentUpon>SystemRoleManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\AccruedPeriod.aspx.designer.cs">
+      <DependentUpon>AccruedPeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Announcement.aspx.designer.cs">
+      <DependentUpon>Announcement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ApplyYear.aspx.designer.cs">
+      <DependentUpon>ApplyYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\BulletinDetail.aspx.designer.cs">
+      <DependentUpon>BulletinDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ChannelType.aspx.designer.cs">
+      <DependentUpon>ChannelType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ContractType.aspx.designer.cs">
+      <DependentUpon>ContractType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\CostCenter.aspx.designer.cs">
+      <DependentUpon>CostCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\CustomerType.aspx.designer.cs">
+      <DependentUpon>CustomerType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\EmailHistory.aspx.designer.cs">
+      <DependentUpon>EmailHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ExpenseCategory.aspx.designer.cs">
+      <DependentUpon>ExpenseCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ExpenseItem.aspx.designer.cs">
+      <DependentUpon>ExpenseItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ExpenseManageType.aspx.designer.cs">
+      <DependentUpon>ExpenseManageType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\CustomerImport.aspx.cs">
+      <DependentUpon>CustomerImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\CustomerImport.aspx.designer.cs">
+      <DependentUpon>CustomerImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Material.aspx.designer.cs">
+      <DependentUpon>Material.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PaymentType.aspx.designer.cs">
+      <DependentUpon>PaymentType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PromotionScope.aspx.designer.cs">
+      <DependentUpon>PromotionScope.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PromotionType.aspx.designer.cs">
+      <DependentUpon>PromotionType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ProvinceCity.aspx.designer.cs">
+      <DependentUpon>ProvinceCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ProxyReimburse.aspx.designer.cs">
+      <DependentUpon>ProxyReimburse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ReimbursePeriod.aspx.designer.cs">
+      <DependentUpon>ReimbursePeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\RejectReason.aspx.designer.cs">
+      <DependentUpon>RejectReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ShelfType.aspx.designer.cs">
+      <DependentUpon>ShelfType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ShopLevel.aspx.designer.cs">
+      <DependentUpon>ShopLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\SKUCategory.aspx.designer.cs">
+      <DependentUpon>SKUCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\ShopImport.aspx.cs">
+      <DependentUpon>ShopImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ShopImport.aspx.designer.cs">
+      <DependentUpon>ShopImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetManage\ManageFeeBudget.aspx.designer.cs">
+      <DependentUpon>ManageFeeBudget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetManage\ManageFeeBudgetImport.aspx.designer.cs">
+      <DependentUpon>ManageFeeBudgetImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetManage\SalesFeeBudget.aspx.designer.cs">
+      <DependentUpon>SalesFeeBudget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetManage\SalesFeeBudgetImport.aspx.designer.cs">
+      <DependentUpon>SalesFeeBudgetImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin.aspx.designer.cs">
+      <DependentUpon>Bulletin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BulletinDetail.aspx.designer.cs">
+      <DependentUpon>BulletinDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessProxySelect.aspx.designer.cs">
+      <DependentUpon>BusinessProxySelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultErrorPage.aspx.designer.cs">
+      <DependentUpon>DefaultErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DialogMasterPage.master.designer.cs">
+      <DependentUpon>DialogMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BudgetSalesFeeViewSearch.aspx.designer.cs">
+      <DependentUpon>BudgetSalesFeeViewSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\CustomerSearch.aspx.designer.cs">
+      <DependentUpon>CustomerSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\MaterialSearch.aspx.designer.cs">
+      <DependentUpon>MaterialSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\OrganizationUnitSelectDlg.aspx.designer.cs">
+      <DependentUpon>OrganizationUnitSelectDlg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ShopSearch.aspx.designer.cs">
+      <DependentUpon>ShopSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SKUSearch.aspx.designer.cs">
+      <DependentUpon>SKUSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\StaffSearch.aspx.designer.cs">
+      <DependentUpon>StaffSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\DatabaseErrorPage.aspx.designer.cs">
+      <DependentUpon>DatabaseErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\LostSessionErrorPage.aspx.designer.cs">
+      <DependentUpon>LostSessionErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\NoPositionErrorPage.aspx.designer.cs">
+      <DependentUpon>NoPositionErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\NoRightErrorPage.aspx.designer.cs">
+      <DependentUpon>NoRightErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\SystemErrorPage.aspx.designer.cs">
+      <DependentUpon>SystemErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeepSession.aspx.designer.cs">
+      <DependentUpon>KeepSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\ReportingServiceProxy.cs" />
+    <Compile Include="Old_App_Code\utility\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\utility\CommonUtility.cs" />
+    <Compile Include="Old_App_Code\utility\OUTreeUtility.cs" />
+    <Compile Include="Old_App_Code\utility\PageUtility.cs" />
+    <Compile Include="App_GlobalResources\Messages.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RegularExpressions.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegularExpressions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationManage\FlowParticipantManage.aspx.cs">
+      <DependentUpon>FlowParticipantManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\OperateScopeManage.aspx.cs">
+      <DependentUpon>OperateScopeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\OrganizationManage.aspx.cs">
+      <DependentUpon>OrganizationManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionManage.aspx.cs">
+      <DependentUpon>PositionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionRightManage.aspx.cs">
+      <DependentUpon>PositionRightManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\PositionTypeManage.aspx.cs">
+      <DependentUpon>PositionTypeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\StuffUserManage.aspx.cs">
+      <DependentUpon>StuffUserManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationManage\SystemRoleManage.aspx.cs">
+      <DependentUpon>SystemRoleManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\AccruedPeriod.aspx.cs">
+      <DependentUpon>AccruedPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\Announcement.aspx.cs">
+      <DependentUpon>Announcement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ApplyYear.aspx.cs">
+      <DependentUpon>ApplyYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\BulletinDetail.aspx.cs">
+      <DependentUpon>BulletinDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ChannelType.aspx.cs">
+      <DependentUpon>ChannelType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ContractType.aspx.cs">
+      <DependentUpon>ContractType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\CostCenter.aspx.cs">
+      <DependentUpon>CostCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\CustomerType.aspx.cs">
+      <DependentUpon>CustomerType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\EmailHistory.aspx.cs">
+      <DependentUpon>EmailHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ExpenseCategory.aspx.cs">
+      <DependentUpon>ExpenseCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ExpenseItem.aspx.cs">
+      <DependentUpon>ExpenseItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ExpenseManageType.aspx.cs">
+      <DependentUpon>ExpenseManageType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\Material.aspx.cs">
+      <DependentUpon>Material.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\PaymentType.aspx.cs">
+      <DependentUpon>PaymentType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\PromotionScope.aspx.cs">
+      <DependentUpon>PromotionScope.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\PromotionType.aspx.cs">
+      <DependentUpon>PromotionType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ProvinceCity.aspx.cs">
+      <DependentUpon>ProvinceCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ProxyReimburse.aspx.cs">
+      <DependentUpon>ProxyReimburse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ReimbursePeriod.aspx.cs">
+      <DependentUpon>ReimbursePeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\RejectReason.aspx.cs">
+      <DependentUpon>RejectReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ShelfType.aspx.cs">
+      <DependentUpon>ShelfType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\ShopLevel.aspx.cs">
+      <DependentUpon>ShopLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseData\SKUCategory.aspx.cs">
+      <DependentUpon>SKUCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetManage\ManageFeeBudget.aspx.cs">
+      <DependentUpon>ManageFeeBudget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetManage\ManageFeeBudgetImport.aspx.cs">
+      <DependentUpon>ManageFeeBudgetImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetManage\SalesFeeBudget.aspx.cs">
+      <DependentUpon>SalesFeeBudget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetManage\SalesFeeBudgetImport.aspx.cs">
+      <DependentUpon>SalesFeeBudgetImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bulletin.aspx.cs">
+      <DependentUpon>Bulletin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BulletinDetail.aspx.cs">
+      <DependentUpon>BulletinDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessProxySelect.aspx.cs">
+      <DependentUpon>BusinessProxySelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultErrorPage.aspx.cs">
+      <DependentUpon>DefaultErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DialogMasterPage.master.cs">
+      <DependentUpon>DialogMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\BudgetSalesFeeViewSearch.aspx.cs">
+      <DependentUpon>BudgetSalesFeeViewSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\CustomerSearch.aspx.cs">
+      <DependentUpon>CustomerSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\MaterialSearch.aspx.cs">
+      <DependentUpon>MaterialSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\OrganizationUnitSelectDlg.aspx.cs">
+      <DependentUpon>OrganizationUnitSelectDlg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\ShopSearch.aspx.cs">
+      <DependentUpon>ShopSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\SKUSearch.aspx.cs">
+      <DependentUpon>SKUSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\StaffSearch.aspx.cs">
+      <DependentUpon>StaffSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\DatabaseErrorPage.aspx.cs">
+      <DependentUpon>DatabaseErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\LostSessionErrorPage.aspx.cs">
+      <DependentUpon>LostSessionErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\NoPositionErrorPage.aspx.cs">
+      <DependentUpon>NoPositionErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\NoRightErrorPage.aspx.cs">
+      <DependentUpon>NoRightErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\SystemErrorPage.aspx.cs">
+      <DependentUpon>SystemErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeepSession.aspx.cs">
+      <DependentUpon>KeepSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\BudgetAllocationApply.aspx.cs">
+      <DependentUpon>BudgetAllocationApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\BudgetAllocationApply.aspx.designer.cs">
+      <DependentUpon>BudgetAllocationApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\BudgetAllocationApproval.aspx.cs">
+      <DependentUpon>BudgetAllocationApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\BudgetAllocationApproval.aspx.designer.cs">
+      <DependentUpon>BudgetAllocationApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\ContractApply.aspx.cs">
+      <DependentUpon>ContractApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\ContractApply.aspx.designer.cs">
+      <DependentUpon>ContractApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\ContractApproval.aspx.cs">
+      <DependentUpon>ContractApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\ContractApproval.aspx.designer.cs">
+      <DependentUpon>ContractApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\MaterialApply.aspx.cs">
+      <DependentUpon>MaterialApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\MaterialApply.aspx.designer.cs">
+      <DependentUpon>MaterialApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\MaterialApproval.aspx.cs">
+      <DependentUpon>MaterialApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\MaterialApproval.aspx.designer.cs">
+      <DependentUpon>MaterialApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\PersonalReimburseApply.aspx.cs">
+      <DependentUpon>PersonalReimburseApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\PersonalReimburseApply.aspx.designer.cs">
+      <DependentUpon>PersonalReimburseApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\PersonalReimburseApproval.aspx.cs">
+      <DependentUpon>PersonalReimburseApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\PersonalReimburseApproval.aspx.designer.cs">
+      <DependentUpon>PersonalReimburseApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\TravelApply.aspx.cs">
+      <DependentUpon>TravelApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\TravelApply.aspx.designer.cs">
+      <DependentUpon>TravelApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\TravelApproval.aspx.cs">
+      <DependentUpon>TravelApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\TravelApproval.aspx.designer.cs">
+      <DependentUpon>TravelApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseSelect.aspx.cs">
+      <DependentUpon>TravelReimburseSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseSelect.aspx.designer.cs">
+      <DependentUpon>TravelReimburseSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseApply.aspx.cs">
+      <DependentUpon>TravelReimburseApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseApply.aspx.designer.cs">
+      <DependentUpon>TravelReimburseApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseApproval.aspx.cs">
+      <DependentUpon>TravelReimburseApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherForm\TravelReimburseApproval.aspx.designer.cs">
+      <DependentUpon>TravelReimburseApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PositionSelect.aspx.cs">
+      <DependentUpon>PositionSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PositionSelect.aspx.designer.cs">
+      <DependentUpon>PositionSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryForm\FormApplyList.aspx.cs">
+      <DependentUpon>FormApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormApplyList.aspx.designer.cs">
+      <DependentUpon>FormApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\FormBugetAllocationList.aspx.cs">
+      <DependentUpon>FormBugetAllocationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormBugetAllocationList.aspx.designer.cs">
+      <DependentUpon>FormBugetAllocationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\FormContractList.aspx.cs">
+      <DependentUpon>FormContractList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormContractList.aspx.designer.cs">
+      <DependentUpon>FormContractList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\FormMaterialList.aspx.cs">
+      <DependentUpon>FormMaterialList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormMaterialList.aspx.designer.cs">
+      <DependentUpon>FormMaterialList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\FormReimburseList.aspx.cs">
+      <DependentUpon>FormReimburseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormReimburseList.aspx.designer.cs">
+      <DependentUpon>FormReimburseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\MyTaskList.aspx.cs">
+      <DependentUpon>MyTaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\MyTaskList.aspx.designer.cs">
+      <DependentUpon>MyTaskList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\MyTaskListSharePoint.aspx.cs">
+      <DependentUpon>MyTaskListSharePoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\MyTaskListSharePoint.aspx.designer.cs">
+      <DependentUpon>MyTaskListSharePoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\PersonalReimburseList.aspx.cs">
+      <DependentUpon>PersonalReimburseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\PersonalReimburseList.aspx.designer.cs">
+      <DependentUpon>PersonalReimburseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm\FormApplyBatchPrint.aspx.cs">
+      <DependentUpon>FormApplyBatchPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QueryForm\FormApplyBatchPrint.aspx.designer.cs">
+      <DependentUpon>FormApplyBatchPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesAccruedTotalFeeReport.aspx.cs">
+      <DependentUpon>SalesAccruedTotalFeeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesAccruedTotalFeeReport.aspx.designer.cs">
+      <DependentUpon>SalesAccruedTotalFeeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesApplyExportReport.aspx.cs">
+      <DependentUpon>SalesApplyExportReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesApplyExportReport.aspx.designer.cs">
+      <DependentUpon>SalesApplyExportReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesBudgetByPosition.aspx.cs">
+      <DependentUpon>SalesBudgetByPosition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesBudgetByPosition.aspx.designer.cs">
+      <DependentUpon>SalesBudgetByPosition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesPromotionPrintReport.aspx.cs">
+      <DependentUpon>SalesPromotionPrintReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesPromotionPrintReport.aspx.designer.cs">
+      <DependentUpon>SalesPromotionPrintReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseDeliveryReport.aspx.cs">
+      <DependentUpon>SalesReimburseDeliveryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseDeliveryReport.aspx.designer.cs">
+      <DependentUpon>SalesReimburseDeliveryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseDetailReport.aspx.cs">
+      <DependentUpon>SalesReimburseDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseDetailReport.aspx.designer.cs">
+      <DependentUpon>SalesReimburseDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseRateForFinanceReport.aspx.cs">
+      <DependentUpon>SalesReimburseRateForFinanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseRateForFinanceReport.aspx.designer.cs">
+      <DependentUpon>SalesReimburseRateForFinanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseRateReport.aspx.cs">
+      <DependentUpon>SalesReimburseRateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesReimburseRateReport.aspx.designer.cs">
+      <DependentUpon>SalesReimburseRateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesTotalFeeForFinanceReport.aspx.cs">
+      <DependentUpon>SalesTotalFeeForFinanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesTotalFeeForFinanceReport.aspx.designer.cs">
+      <DependentUpon>SalesTotalFeeForFinanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesTotalFeeReport.aspx.cs">
+      <DependentUpon>SalesTotalFeeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesTotalFeeReport.aspx.designer.cs">
+      <DependentUpon>SalesTotalFeeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManage\SalesApplyListBatch.aspx.cs">
+      <DependentUpon>SalesApplyListBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportManage\SalesApplyListBatch.aspx.designer.cs">
+      <DependentUpon>SalesApplyListBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\FormApplyConfirmList.aspx.cs">
+      <DependentUpon>FormApplyConfirmList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\FormApplyConfirmList.aspx.designer.cs">
+      <DependentUpon>FormApplyConfirmList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\FormApplySelectList.aspx.cs">
+      <DependentUpon>FormApplySelectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\FormApplySelectList.aspx.designer.cs">
+      <DependentUpon>FormApplySelectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseGoodsApply.aspx.cs">
+      <DependentUpon>ReimburseGoodsApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseGoodsApply.aspx.designer.cs">
+      <DependentUpon>ReimburseGoodsApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseGoodsApproval.aspx.cs">
+      <DependentUpon>ReimburseGoodsApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseGoodsApproval.aspx.designer.cs">
+      <DependentUpon>ReimburseGoodsApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseMoneyApply.aspx.cs">
+      <DependentUpon>ReimburseMoneyApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseMoneyApply.aspx.designer.cs">
+      <DependentUpon>ReimburseMoneyApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseMoneyApproval.aspx.cs">
+      <DependentUpon>ReimburseMoneyApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\ReimburseMoneyApproval.aspx.designer.cs">
+      <DependentUpon>ReimburseMoneyApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesApplySelect.aspx.cs">
+      <DependentUpon>SalesApplySelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesApplySelect.aspx.designer.cs">
+      <DependentUpon>SalesApplySelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralApply.aspx.cs">
+      <DependentUpon>SalesGeneralApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralApply.aspx.designer.cs">
+      <DependentUpon>SalesGeneralApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralApproval.aspx.cs">
+      <DependentUpon>SalesGeneralApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralApproval.aspx.designer.cs">
+      <DependentUpon>SalesGeneralApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralExecution.aspx.cs">
+      <DependentUpon>SalesGeneralExecution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesGeneralExecution.aspx.designer.cs">
+      <DependentUpon>SalesGeneralExecution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionApply.aspx.cs">
+      <DependentUpon>SalesPromotionApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionApply.aspx.designer.cs">
+      <DependentUpon>SalesPromotionApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionApproval.aspx.cs">
+      <DependentUpon>SalesPromotionApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionApproval.aspx.designer.cs">
+      <DependentUpon>SalesPromotionApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionExecution.aspx.cs">
+      <DependentUpon>SalesPromotionExecution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesPromotionExecution.aspx.designer.cs">
+      <DependentUpon>SalesPromotionExecution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesRebateApply.aspx.cs">
+      <DependentUpon>SalesRebateApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesRebateApply.aspx.designer.cs">
+      <DependentUpon>SalesRebateApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForm\SalesRebateApproval.aspx.cs">
+      <DependentUpon>SalesRebateApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesForm\SalesRebateApproval.aspx.designer.cs">
+      <DependentUpon>SalesRebateApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysLog\AuthorizationConfigureLog.aspx.cs">
+      <DependentUpon>AuthorizationConfigureLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysLog\AuthorizationConfigureLog.aspx.designer.cs">
+      <DependentUpon>AuthorizationConfigureLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysLog\CommonDataEditActionLog.aspx.cs">
+      <DependentUpon>CommonDataEditActionLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysLog\CommonDataEditActionLog.aspx.designer.cs">
+      <DependentUpon>CommonDataEditActionLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysLog\LogInActionLog.aspx.cs">
+      <DependentUpon>LogInActionLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysLog\LogInActionLog.aspx.designer.cs">
+      <DependentUpon>LogInActionLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\APFlowNodes.ascx.cs">
+      <DependentUpon>APFlowNodes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\APFlowNodes.ascx.designer.cs">
+      <DependentUpon>APFlowNodes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttachmentFile.ascx.cs">
+      <DependentUpon>AttachmentFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttachmentFile.ascx.designer.cs">
+      <DependentUpon>AttachmentFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BudgetSalesFeeViewControl.ascx.cs">
+      <DependentUpon>BudgetSalesFeeViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\BudgetSalesFeeViewControl.ascx.designer.cs">
+      <DependentUpon>BudgetSalesFeeViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomerControl.ascx.cs">
+      <DependentUpon>CustomerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomerControl.ascx.designer.cs">
+      <DependentUpon>CustomerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaterialControl.ascx.cs">
+      <DependentUpon>MaterialControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaterialControl.ascx.designer.cs">
+      <DependentUpon>MaterialControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MultiAttachmentFile.ascx.cs">
+      <DependentUpon>MultiAttachmentFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultiAttachmentFile.ascx.designer.cs">
+      <DependentUpon>MultiAttachmentFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OUSelect.ascx.cs">
+      <DependentUpon>OUSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OUSelect.ascx.designer.cs">
+      <DependentUpon>OUSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PromotionPrintControl.ascx.cs">
+      <DependentUpon>PromotionPrintControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PromotionPrintControl.ascx.designer.cs">
+      <DependentUpon>PromotionPrintControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportViewer.ascx.cs">
+      <DependentUpon>ReportViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportViewer.ascx.designer.cs">
+      <DependentUpon>ReportViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportViewerWithoutPara.ascx.cs">
+      <DependentUpon>ReportViewerWithoutPara.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportViewerWithoutPara.ascx.designer.cs">
+      <DependentUpon>ReportViewerWithoutPara.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportViewerWithParameter.ascx.cs">
+      <DependentUpon>ReportViewerWithParameter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportViewerWithParameter.ascx.designer.cs">
+      <DependentUpon>ReportViewerWithParameter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShopSelectControl.ascx.cs">
+      <DependentUpon>ShopSelectControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShopSelectControl.ascx.designer.cs">
+      <DependentUpon>ShopSelectControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SKUControl.ascx.cs">
+      <DependentUpon>SKUControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SKUControl.ascx.designer.cs">
+      <DependentUpon>SKUControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StaffControl.ascx.cs">
+      <DependentUpon>StaffControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\StaffControl.ascx.designer.cs">
+      <DependentUpon>StaffControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDateInput.ascx.cs">
+      <DependentUpon>UCDateInput.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDateInput.ascx.designer.cs">
+      <DependentUpon>UCDateInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDateTimeInput.ascx.cs">
+      <DependentUpon>UCDateTimeInput.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDateTimeInput.ascx.designer.cs">
+      <DependentUpon>UCDateTimeInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucUpdateProgress.ascx.cs">
+      <DependentUpon>ucUpdateProgress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucUpdateProgress.ascx.designer.cs">
+      <DependentUpon>ucUpdateProgress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\YearAndMonthUserControl.ascx.cs">
+      <DependentUpon>YearAndMonthUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\YearAndMonthUserControl.ascx.designer.cs">
+      <DependentUpon>YearAndMonthUserControl.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DialogMasterPage.master" />
+    <Content Include="MasterPage.master" />
+    <Content Include="packages.config" />
+    <None Include="ERS_Report\ERS_Report.suo" />
+    <None Include="ERS_Report\ERS_Report\BatchAlterFeeApply - 备份.rdl" />
+    <None Include="ERS_Report\ERS_Report\BatchSalesPromotionPrintReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\BatchSalesPromotionPrintReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\build.obj" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\ERS_Report.rds" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesAccruedTotalFee.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesAccruedTotalFee_Bak.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesApply_Export%28Good%29.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesApply_Export%28Total%29.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesBudgetByPosition.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesBudgetInApprove.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesPromotionFeeReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesPromotionPrintReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesReimburseDelivery.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesReimburseDetail.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesReimburseRateReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesTotalFee.rdl" />
+    <None Include="ERS_Report\ERS_Report\bin\Debug\SalesTotalFee_Bak.rdl" />
+    <None Include="ERS_Report\ERS_Report\ERS_Report.rds" />
+    <None Include="ERS_Report\ERS_Report\ERS_Report.rptproj" />
+    <None Include="ERS_Report\ERS_Report\SalesAccruedTotalFee.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesAccruedTotalFee_Bak.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesApply_Export%28Good%29.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesApply_Export%28Good%29.rdl.data" />
+    <None Include="ERS_Report\ERS_Report\SalesApply_Export%28Total%29.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesApply_Export%28Total%29.rdl.data" />
+    <None Include="ERS_Report\ERS_Report\SalesBudgetByPosition.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesBudgetInApprove.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesPromotionFeeReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesPromotionPrintReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesReimburseDelivery.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesReimburseDeliveryDetailReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesReimburseDetail.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesReimburseDetail.rdl.data" />
+    <None Include="ERS_Report\ERS_Report\SalesReimburseRateReport.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesTotalFee.rdl" />
+    <None Include="ERS_Report\ERS_Report\SalesTotalFee_Bak.rdl" />
+    <None Include="TemplateExcel\BudgetManageFeeImportTemplate.xls" />
+    <None Include="TemplateExcel\BudgetSalesFeeImportTemplate.xls" />
+    <None Include="TemplateExcel\CustomerImportTemplate.xls" />
+    <None Include="TemplateExcel\ERSHelp.rar" />
+    <None Include="TemplateExcel\ShopImportTemplate.xls" />
+    <None Include="TemplateExcel\StuffRight.xls" />
+    <None Include="WorkFlowChart\个人费用报销.vsd" />
+    <None Include="WorkFlowChart\个人费用报销（副总经理）.vsd" />
+    <None Include="WorkFlowChart\合同申请.vsd" />
+    <None Include="WorkFlowChart\广宣物资申请.vsd" />
+    <None Include="WorkFlowChart\方案报销.vsd" />
+    <None Include="WorkFlowChart\方案申请.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\合同申请.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（副总下属经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（副总经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（工厂经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（市场经理%29.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（财务经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（销售总监%29.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（销售总监下属经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\新版本个人费用报销\个人费用报销（销售财务经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\方案报销.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\方案申请.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\旧版本\个人费用报销20130221.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\旧版本\个人费用报销（财务经理）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\旧版本\个人费用报销（销售总监）.vsd" />
+    <None Include="WorkFlowChart\流程模板更新\旧版本\个人费用报销（销售经理）.vsd" />
+    <None Include="WorkFlowChart\预算调拨申请.vsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RegularExpressions.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RegularExpressions.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj">
+      <Project>{AA266C62-8013-46B8-9D0C-AEE5F1884C75}</Project>
+      <Name>BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gc.WebControls\Gc.WebControls.csproj">
+      <Project>{819A62B9-BBC2-4AFC-8857-4E307396E75D}</Project>
+      <Name>Gc.WebControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\lib.csproj">
+      <Project>{3F9C9A0B-3D5E-44B5-8DBA-BD40BD6D17AC}</Project>
+      <Name>lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>123</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

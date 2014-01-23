@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="HDERII">
+      <DataSourceReference>HDERII</DataSourceReference>
+      <rd:DataSourceID>51c9fb30-6b9c-4ab7-a7de-675e96ba6a34</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <PageWidth>20.5cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="expenseform">
+      <DataType>String</DataType>
+      <Prompt>expenseform</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>0.2cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="list1">
+        <Left>0.25cm</Left>
+        <ReportItems>
+          <Subreport Name="subreport1">
+            <Parameters>
+              <Parameter Name="ExpenseFormID">
+                <Value>=Fields!ExpenseFormId.Value</Value>
+              </Parameter>
+              <Parameter Name="FeeType">
+                <Value>=Fields!FeeTypeName.Value</Value>
+              </Parameter>
+              <Parameter Name="AppDate">
+                <Value>=Fields!SubmitDate.Value</Value>
+              </Parameter>
+              <Parameter Name="OrganizationUnitCode">
+                <Value>=Fields!OrganizationUnitCode.Value</Value>
+              </Parameter>
+              <Parameter Name="OrganizationUnitName">
+                <Value>=Fields!OrganizationUnitName.Value</Value>
+              </Parameter>
+              <Parameter Name="ExpenseFormNo">
+                <Value>=Fields!ExpenseFormNo.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Width>20.5cm</Width>
+            <ReportName>AlterFeeApply</ReportName>
+            <Height>1.5cm</Height>
+          </Subreport>
+        </ReportItems>
+        <DataSetName>HDER_Server_</DataSetName>
+        <Grouping Name="list1_Details_Group">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <GroupExpressions>
+            <GroupExpression>=Fields!ExpenseFormId.Value</GroupExpression>
+            <GroupExpression>=Fields!SubmitDate.Value</GroupExpression>
+            <GroupExpression>=Fields!FeeTypeName.Value</GroupExpression>
+            <GroupExpression>=Fields!OrganizationUnitCode.Value</GroupExpression>
+            <GroupExpression>=Fields!OrganizationUnitName.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <Height>1.74603cm</Height>
+      </List>
+    </ReportItems>
+    <Height>2cm</Height>
+  </Body>
+  <rd:ReportID>70cb1b3c-d2e2-4724-ab79-14fdfadc7e4e</rd:ReportID>
+  <DataSets>
+    <DataSet Name="HDER_Server_">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select  ExpenseForm.ExpenseFormID,ExpenseForm.ExpenseFormNo,ExpenseForm.SubmitDate,FeeType.FeeTypeName,
+		OrganizationUnit.OrganizationUnitCode,OrganizationUnit.OrganizationUnitName
+from expenseform join FeeType on ExpenseForm.FeeTypeID = FeeType.FeeTypeId
+	join Position on ExpenseForm.PositionID = Position.PositionID
+	join OrganizationUnit on Position.OrganizationUnitId = OrganizationUnit.OrganizationUnitId
+where expenseFormID in (@expenseform)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@expenseform">
+            <Value>=Parameters!expenseform.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>HDERII</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ExpenseFormId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ExpenseFormID</DataField>
+        </Field>
+        <Field Name="ExpenseFormNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ExpenseFormNo</DataField>
+        </Field>
+        <Field Name="SubmitDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>SubmitDate</DataField>
+        </Field>
+        <Field Name="FeeTypeName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FeeTypeName</DataField>
+        </Field>
+        <Field Name="OrganizationUnitCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OrganizationUnitCode</DataField>
+        </Field>
+        <Field Name="OrganizationUnitName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OrganizationUnitName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>21cm</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox4">
+        <Left>9.75cm</Left>
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Width>1.00529cm</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.50265cm</Height>
+        <Value>=Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Left>9.25cm</Left>
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Width>0.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.50265cm</Height>
+        <Value>/</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Left>8cm</Left>
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1.00529cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.50265cm</Height>
+        <Value>=Globals!PageNumber</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Left>6.75cm</Left>
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>1cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.50265cm</Height>
+        <Value>页号</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.00265cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageFooter>
+  <PageHeight>29cm</PageHeight>
+</Report>

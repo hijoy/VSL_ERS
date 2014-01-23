@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA266C62-8013-46B8-9D0C-AEE5F1884C75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects</RootNamespace>
+    <AssemblyName>BusinessObjects</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APFlowBLL.cs" />
+    <Compile Include="BudgetBLL.cs" />
+    <Compile Include="BudgetDS.cs">
+      <DependentUpon>BudgetDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BudgetDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BudgetDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessUtility.cs" />
+    <Compile Include="BudgetAllocationApplyBLL.cs" />
+    <Compile Include="ImportBLL.cs" />
+    <Compile Include="FormDS.cs">
+      <DependentUpon>FormDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormQueryBLL.cs" />
+    <Compile Include="ImportDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDataBLL.cs" />
+    <Compile Include="MaterialApplyBLL.cs" />
+    <Compile Include="DBNullConverter.cs" />
+    <Compile Include="AuthorizationBLL.cs" />
+    <Compile Include="AuthorizationDS.cs">
+      <DependentUpon>AuthorizationDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AuthorizationDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorizationDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogBLL.cs" />
+    <Compile Include="LogDS.cs">
+      <DependentUpon>LogDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LogDS.Designer.cs">
+      <DependentUpon>LogDS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="OUTreeBLL.cs" />
+    <Compile Include="PositionRightBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QueryDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QueryDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBLL.cs" />
+    <Compile Include="SalesApplyBLL.cs" />
+    <Compile Include="SalesReimburseBLL.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StuffUserBLL.cs" />
+    <Compile Include="SysLog.cs" />
+    <Compile Include="SystemEnums.cs" />
+    <Compile Include="TableAdapterHelper.cs" />
+    <Compile Include="ERS.cs">
+      <DependentUpon>ERS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ERS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityBLL.cs" />
+    <Compile Include="ContractApplyBLL.cs" />
+    <Compile Include="PersonalReimburseBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AuthorizationDS.xsc">
+      <DependentUpon>AuthorizationDS.xsd</DependentUpon>
+    </None>
+    <None Include="AuthorizationDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AuthorizationDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AuthorizationDS.xss">
+      <DependentUpon>AuthorizationDS.xsd</DependentUpon>
+    </None>
+    <None Include="BudgetDS.xsc">
+      <DependentUpon>BudgetDS.xsd</DependentUpon>
+    </None>
+    <None Include="BudgetDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BudgetDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BudgetDS.xss">
+      <DependentUpon>BudgetDS.xsd</DependentUpon>
+    </None>
+    <None Include="FormDS.xsc">
+      <DependentUpon>FormDS.xsd</DependentUpon>
+    </None>
+    <None Include="FormDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FormDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FormDS.xss">
+      <DependentUpon>FormDS.xsd</DependentUpon>
+    </None>
+    <None Include="ImportDS.xsc">
+      <DependentUpon>ImportDS.xsd</DependentUpon>
+    </None>
+    <None Include="ImportDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImportDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ImportDS.xss">
+      <DependentUpon>ImportDS.xsd</DependentUpon>
+    </None>
+    <None Include="LogDS.xsc">
+      <DependentUpon>LogDS.xsd</DependentUpon>
+    </None>
+    <None Include="LogDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LogDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LogDS.xss">
+      <DependentUpon>LogDS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ERS.xsc">
+      <DependentUpon>ERS.xsd</DependentUpon>
+    </None>
+    <None Include="ERS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ERS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ERS.xss">
+      <DependentUpon>ERS.xsd</DependentUpon>
+    </None>
+    <None Include="QueryDS.xsc">
+      <DependentUpon>QueryDS.xsd</DependentUpon>
+    </None>
+    <None Include="QueryDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QueryDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QueryDS.xss">
+      <DependentUpon>QueryDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib\lib.csproj">
+      <Project>{3F9C9A0B-3D5E-44B5-8DBA-BD40BD6D17AC}</Project>
+      <Name>lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
